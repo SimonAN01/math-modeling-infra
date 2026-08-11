@@ -34,6 +34,44 @@
 - 表格三线表（booktabs），公式带 label 用 `\cref` 引用
 - 图不求多，信息密度低的不放；太简单的图改成表
 
+## LaTeX 硬规则（CUMCMThesis）
+
+- 主入口：`example.tex` 或由其复制的 `main.tex`，`\documentclass{cumcmthesis}`
+- **电子版提交**（2026 规范去掉承诺书/编号页）：用 `\documentclass[withoutpreface,bwprint]{cumcmthesis}`
+- 编译：XeLaTeX + UTF-8；改动版式、交叉引用、目录后**至少编译 2 次**
+- `\timu{}` 替换为真实标题；`\keyword{}` 填 4--6 个关键词
+- 公式用 `equation` / `align` 原生环境并配 `label`，引用用 `\cref{}`；图片放 `figures/`
+- 优化模型：大括号 + 目标 + 约束，目标用大写符号（如 $Z$），写 `\text{s.t.}` 不写"约束为"；`\forall j` 等量词紧跟该条约束行末
+- 小节内部优先用 `\noindent\textbf{1. 决策变量}` 编号式小标题，不无谓下钻子节
+- 章节标题具体到模型/算法（如"单车装箱启发式求解"），不写"建模思路""求解算法设计"这类空标题
+- 章节导语（若需要）默认 2--4 句；模型结尾禁止无新增信息的套话总结
+- 结论按题目问数逐项对应书写，几问就写几段，不额外发散
+
+## 算法三线表（代替流程图）
+
+- 导言区 `\usepackage{algorithm}` + `\usepackage{algorithmic}`
+- 算法框**前后各有一处正文说明**（为什么用该算法、解决哪一步、核心机制），不能只丢一个框
+- 只有 3--5 步的流程用算法三线表，不再额外画流程图
+
+```tex
+\begin{algorithm}[H]
+\caption{算法名称}
+\label{algo:xxx}
+\begin{algorithmic}[1]
+\REQUIRE 输入
+\ENSURE 输出
+\WHILE{条件成立}
+\STATE 执行当前步骤
+\IF{满足判断条件}
+\STATE 执行分支 A
+\ELSE
+\STATE 执行分支 B
+\ENDIF
+\ENDWHILE
+\end{algorithmic}
+\end{algorithm}
+```
+
 ## 每章页数预算（page-budget，2026 规范：正文 ≤ 30 页）
 
 | 摘要 | 问题分析 | 各问建模 | 检验 | 结论 | 参考 + 附录 |

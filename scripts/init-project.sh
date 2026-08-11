@@ -32,6 +32,7 @@ put data-log.md        02-data/data-log.md
 put model-review.md    03-models/model-review.md
 put results.md         04-results/results.md
 put paper-outline.md   05-paper/paper-outline.md
+put paper-review.md    05-paper/paper-review.md
 put checklist.md       06-submission/checklist.md
 
 # CUMCMThesis 模板（不含微软字体）自动拷入 05-paper/，幂等
