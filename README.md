@@ -50,7 +50,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File "$env:USERPROFILE\.claude\sk
 ├── handoff.md               进度交接 —— 每个窗口结束前更新
 ├── 01-problem/              拆题：problem-brief / question-map / submission-rule
 ├── 02-data/                 raw/（原始数据，不覆盖）+ processed/ + data-log.md 留痕
-├── 03-models/               model-review.md 六维审查（不过审不进 code/）+ code/（uv 项目）
+├── 03-models/               model-review.md 六维审查（不过审不进 code/）+ method-selection.md（12 张方法选型表）+ code/（uv 项目）
 ├── 04-results/              results.md 每版结果一行 + figures/ 论文用图
 ├── 05-paper/                paper-outline.md（八股结构 + LaTeX 硬规则）+ paper-review.md（自审/收口）+ CUMCMThesis 模板（建骨架时自动拷入）
 ├── 06-submission/           checklist.md 赛前 48h + 提交前检查
