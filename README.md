@@ -26,12 +26,21 @@ git clone https://github.com/SimonAN01/math-modeling-infra.git math-modeling-inf
 
 ## 安装为 skill
 
+框架**自带**两个配套 skill：`scientific-figure-making`（出图规范）、`humanizer-zh`（定稿前去 AI 味），都打包在仓库 `skills/` 子目录里——装一次就是三个：
+
 ```bash
-git clone https://github.com/SimonAN01/math-modeling-infra.git ~/.claude/skills/math-modeling-infra
-# 用 Codex 则装到 ~/.codex/skills/
+# 克隆后一条命令装齐（含自带的两个配套 skill）
+bash math-modeling-infra/scripts/install-skills.sh ~/.claude/skills      # Claude Code / opencode
+bash math-modeling-infra/scripts/install-skills.sh ~/.codex/skills       # Codex
 ```
 
-建议同时安装配套 skill：`scientific-figure-making`（出图规范）、`humanizer-zh`（定稿前去 AI 味）。
+```powershell
+# Windows
+git clone https://github.com/SimonAN01/math-modeling-infra.git "$env:USERPROFILE\.claude\skills\math-modeling-infra"
+powershell -NoProfile -ExecutionPolicy Bypass -File "$env:USERPROFILE\.claude\skills\math-modeling-infra\scripts\install-skills.ps1" "$env:USERPROFILE\.claude\skills"
+```
+
+装完对 Agent 说「开个新坑，国赛 C 题」，它会问你三件事（赛制题号、时间分工、数据位置），然后把整套结构建好。
 
 ## 项目结构
 
@@ -73,4 +82,6 @@ git clone https://github.com/SimonAN01/math-modeling-infra.git ~/.claude/skills/
 
 ## License
 
-Apache License 2.0
+- 框架本体：Apache License 2.0
+- 自带 `humanizer-zh`：MIT（原作者 歸藏）
+- 自带 `scientific-figure-making`：MIT（源自 [figures4papers](https://github.com/SimonAN01/figures4papers)）
