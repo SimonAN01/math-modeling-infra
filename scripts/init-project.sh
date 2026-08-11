@@ -33,6 +33,7 @@ put model-review.md    03-models/model-review.md
 put method-selection.md 03-models/method-selection.md
 put results.md         04-results/results.md
 put paper-outline.md   05-paper/paper-outline.md
+put modeling-chapter.md 05-paper/modeling-chapter.md
 put paper-review.md    05-paper/paper-review.md
 put checklist.md       06-submission/checklist.md
 

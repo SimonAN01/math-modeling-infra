@@ -40,8 +40,9 @@ Put-Template "data-log.md"      "02-data\data-log.md"
 Put-Template "model-review.md"  "03-models\model-review.md"
 Put-Template "method-selection.md" "03-models\method-selection.md"
 Put-Template "results.md"       "04-results\results.md"
-Put-Template "paper-outline.md" "05-paper\paper-outline.md"
-Put-Template "paper-review.md"  "05-paper\paper-review.md"
+Put-Template "paper-outline.md"   "05-paper\paper-outline.md"
+Put-Template "modeling-chapter.md" "05-paper\modeling-chapter.md"
+Put-Template "paper-review.md"    "05-paper\paper-review.md"
 Put-Template "checklist.md"     "06-submission\checklist.md"
 
 # CUMCMThesis 模板（不含微软字体）自动拷入 05-paper/，幂等
