@@ -52,9 +52,13 @@ powershell -NoProfile -ExecutionPolicy Bypass -File "$env:USERPROFILE\.claude\sk
 ├── 02-data/                 raw/（原始数据，不覆盖）+ processed/ + data-log.md 留痕
 ├── 03-models/               model-review.md 六维审查（不过审不进 code/）+ code/（uv 项目）
 ├── 04-results/              results.md 每版结果一行 + figures/ 论文用图
-├── 05-paper/                paper-outline.md + CUMCMThesis 模板
-└── 06-submission/           checklist.md 赛前 48h + 提交前检查
+├── 05-paper/                paper-outline.md + CUMCMThesis 模板（建骨架时自动拷入）
+├── 06-submission/           checklist.md 赛前 48h + 提交前检查
 ```
+
+> CUMCMThesis 模板随仓库自带（`templates/CUMCMThesis`，原样未改），
+> 微软字体（simsun.ttc / simkai.ttf）不随仓库分发——Windows 下 `build-paper`
+> 会从系统字体目录自动补齐，Linux / macOS 需自行放入字体。
 
 ## 脚本
 

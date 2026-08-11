@@ -34,6 +34,13 @@ put results.md         04-results/results.md
 put paper-outline.md   05-paper/paper-outline.md
 put checklist.md       06-submission/checklist.md
 
+# CUMCMThesis 模板（不含微软字体）自动拷入 05-paper/，幂等
+TPL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../templates/CUMCMThesis" && pwd)"
+if [ -d "$TPL_DIR" ] && [ ! -d "$DEST/05-paper/CUMCMThesis" ]; then
+  cp -r "$TPL_DIR" "$DEST/05-paper/"
+  echo "  +  05-paper/CUMCMThesis  (LaTeX 模板)"
+fi
+
 if [ ! -e .gitignore ]; then
   cat > .gitignore <<'EOF'
 02-data/raw/

@@ -16,20 +16,39 @@ if ! command -v xelatex >/dev/null 2>&1; then
 fi
 if [ ! -d "$PAPER" ]; then echo "没有 05-paper 目录: $PAPER"; exit 1; fi
 
+# 模板可能在 05-paper/ 或 05-paper/CUMCMThesis/ 子目录，两处都找入口
 ENTRY=""
-for cand in main.tex example.tex; do
-  if [ -f "$PAPER/$cand" ]; then ENTRY="$cand"; break; fi
+PAPERDIR="$PAPER"
+for dir in "$PAPER" "$PAPER/CUMCMThesis"; do
+  for cand in main.tex example.tex; do
+    if [ -f "$dir/$cand" ]; then ENTRY="$cand"; PAPERDIR="$dir"; break; fi
+  done
+  [ -n "$ENTRY" ] && break
 done
 if [ -z "$ENTRY" ]; then echo "没找到入口 (main.tex / example.tex)"; exit 1; fi
 
-cd "$PAPER"
+# CUMCMThesis 模板依赖 simsun.ttc / simkai.ttf（微软字体，仓库不携带）。
+# Windows 下自动从系统字体目录补到论文目录；其他系统提示手动放置。
+for f in simsun.ttc simkai.ttf; do
+  if [ ! -f "$PAPERDIR/$f" ]; then
+    if [ -f "/c/Windows/Fonts/$f" ] || [ -f "/mnt/c/Windows/Fonts/$f" ]; then
+      src="/c/Windows/Fonts/$f"; [ ! -f "$src" ] && src="/mnt/c/Windows/Fonts/$f"
+      cp "$src" "$PAPERDIR/"
+      echo "  +  补字体: $f"
+    else
+      echo "  !  缺少字体 $f（请自行放入 $PAPERDIR）"
+    fi
+  fi
+done
+
+cd "$PAPERDIR"
 xelatex -interaction=nonstopmode -halt-on-error "$ENTRY" >/dev/null
 xelatex -interaction=nonstopmode -halt-on-error "$ENTRY" >/dev/null
 
 PDF="${ENTRY%.tex}.pdf"
 if [ -f "$PDF" ]; then
-  echo "OK: $PAPER/$PDF"
-  echo "记得检查: 目录 / 页码 / 交叉引用 / 图片路径。"
+  echo "OK: $PAPERDIR/$PDF"
+  echo "记得检查: 页码 / 交叉引用 / 图片路径（2026 规范正文不要目录）。"
 else
   echo "编译失败，没有生成 PDF。把 xelatex 报错丢给 AI 修。"
   exit 1

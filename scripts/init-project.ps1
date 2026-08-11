@@ -42,6 +42,14 @@ Put-Template "results.md"       "04-results\results.md"
 Put-Template "paper-outline.md" "05-paper\paper-outline.md"
 Put-Template "checklist.md"     "06-submission\checklist.md"
 
+# CUMCMThesis 模板（不含微软字体）自动拷入 05-paper/，幂等
+$TplDir = Join-Path $Root "templates\CUMCMThesis"
+$TplTarget = Join-Path $Dest "05-paper\CUMCMThesis"
+if ((Test-Path $TplDir) -and -not (Test-Path $TplTarget)) {
+  Copy-Item $TplDir $TplTarget -Recurse
+  Write-Host "  +  05-paper\CUMCMThesis  (LaTeX 模板)"
+}
+
 $gitignore = Join-Path $Dest ".gitignore"
 if (-not (Test-Path $gitignore)) {
   @'
