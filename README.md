@@ -10,6 +10,47 @@
 **竞赛里人和 Agent 的协作，靠一套固定的文件结构来承载**——每个文档职责单一，
 每个新开的 Agent 窗口都知道先读什么、往哪写。
 
+## 学生快速开始（一条命令下载）
+
+> 适用：学生自己建一个项目目录，进入目录后**执行一条命令**即可完成整个框架的下载，
+> 框架会装进当前目录下的 `math-modeling-infra/` 子文件夹。
+
+**Windows（PowerShell，推荐 git 版）：**
+
+```powershell
+git clone https://github.com/SimonAN01/math-modeling-infra.git math-modeling-infra
+```
+
+没有 git 的 Windows 备选（zip 下载，一条命令）：
+
+```powershell
+Invoke-WebRequest https://github.com/SimonAN01/math-modeling-infra/archive/refs/heads/main.zip -OutFile mm.zip; Expand-Archive mm.zip; Move-Item math-modeling-infra-main math-modeling-infra; Remove-Item mm.zip
+```
+
+**Linux / macOS（bash，推荐 git 版）：**
+
+```bash
+git clone https://github.com/SimonAN01/math-modeling-infra.git math-modeling-infra
+```
+
+没有 git 的 Linux/macOS 备选（zip 下载，一条命令）：
+
+```bash
+curl -L https://github.com/SimonAN01/math-modeling-infra/archive/refs/heads/main.zip -o mm.zip && unzip mm.zip && mv math-modeling-infra-main math-modeling-infra && rm mm.zip
+```
+
+下载完，仍在当前目录执行**一条命令**即可建好项目骨架（10 个模板文件 + 目录结构一次生成）：
+
+```powershell
+# Windows
+powershell .\math-modeling-infra\scripts\init-project.ps1 .
+```
+
+```bash
+# Linux / macOS
+bash math-modeling-infra/scripts/init-project.sh .
+```
+
 ## 安装
 
 装完对 Agent 说「开个新坑，国赛 C 题」，它会问你三件事
