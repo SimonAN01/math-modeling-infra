@@ -64,6 +64,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File "$env:USERPROFILE\.claude\sk
 | `setup-env` | uv 建环境 + 装依赖 | `powershell scripts\setup-env.ps1 <目录>` | `bash scripts/setup-env.sh <目录>` |
 | `build-paper` | XeLaTeX 编译论文 | `powershell scripts\build-paper.ps1 <目录>` | `bash scripts/build-paper.sh <目录>` |
 
+> 以上命令**不必手动记**——对 Agent 说「初始化环境」「编译论文」即可，它会自动执行对应脚本。`init-project` 已包含在快速开始的一条命令里，不用再跑。三个脚本均幂等，重复运行安全。
+
 ## 工作节奏
 
 ```
