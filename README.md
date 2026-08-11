@@ -12,13 +12,6 @@
 
 ## 安装
 
-```bash
-# Claude Code / Cursor
-git clone https://github.com/<你的用户名>/math-modeling-infra.git ~/.claude/skills/math-modeling-infra
-# Codex
-git clone https://github.com/<你的用户名>/math-modeling-infra.git ~/.codex/skills/math-modeling-infra
-```
-
 装完对 Agent 说「开个新坑，国赛 C 题」，它会问你三件事
 （赛制题号、时间分工、数据位置），然后把整套结构建好。
 
@@ -26,6 +19,65 @@ git clone https://github.com/<你的用户名>/math-modeling-infra.git ~/.codex/
 
 - `scientific-figure-making` —— 论文出图规范
 - `humanizer-zh` —— 定稿前去 AI 味
+
+### Windows
+
+```powershell
+# PowerShell 7 或 5.1 均可；若脚本中文乱码，确认文件带 UTF-8 BOM（本仓库脚本已内置）
+git clone https://github.com/SimonAN01/math-modeling-infra.git "$env:USERPROFILE\.claude\skills\math-modeling-infra"
+# 用 Codex 则装到这里：
+git clone https://github.com/SimonAN01/math-modeling-infra.git "$env:USERPROFILE\.codex\skills\math-modeling-infra"
+```
+
+开新项目（PowerShell 下必须用 ps1 版脚本）：
+
+```powershell
+powershell "$env:USERPROFILE\.claude\skills\math-modeling-infra\scripts\init-project.ps1" D:\competitions\cumcm-2026-c
+powershell "$env:USERPROFILE\.claude\skills\math-modeling-infra\scripts\setup-env.ps1"  D:\competitions\cumcm-2026-c
+powershell "$env:USERPROFILE\.claude\skills\math-modeling-infra\scripts\build-paper.ps1" D:\competitions\cumcm-2026-c
+```
+
+> 提示：Windows 上若已装 PowerShell 7（`pwsh`），建议改用 `pwsh` 代替 `powershell`，
+> UTF-8 兼容性更好（无需依赖 BOM）。
+
+### Linux
+
+```bash
+git clone https://github.com/SimonAN01/math-modeling-infra.git ~/.claude/skills/math-modeling-infra
+# 用 Codex 则装到这里：
+git clone https://github.com/SimonAN01/math-modeling-infra.git ~/.codex/skills/math-modeling-infra
+```
+
+开新项目：
+
+```bash
+bash ~/.claude/skills/math-modeling-infra/scripts/init-project.sh ~/Code/cumcm-2026-c
+bash ~/.claude/skills/math-modeling-infra/scripts/setup-env.sh  ~/Code/cumcm-2026-c
+bash ~/.claude/skills/math-modeling-infra/scripts/build-paper.sh ~/Code/cumcm-2026-c
+```
+
+> 提示：求解环境依赖 `uv`（`curl -LsSf https://astral.sh/uv/install.sh | sh`）；
+> 论文编译依赖 XeLaTeX + ctex 宏包（`sudo apt install texlive-xetex texlive-lang-chinese` 或 TeX Live full）。
+
+### macOS
+
+```bash
+git clone https://github.com/SimonAN01/math-modeling-infra.git ~/.claude/skills/math-modeling-infra
+# 用 Codex 则装到这里：
+git clone https://github.com/SimonAN01/math-modeling-infra.git ~/.codex/skills/math-modeling-infra
+```
+
+开新项目（与 Linux 同为 bash 脚本）：
+
+```bash
+bash ~/.claude/skills/math-modeling-infra/scripts/init-project.sh ~/Code/cumcm-2026-c
+bash ~/.claude/skills/math-modeling-infra/scripts/setup-env.sh  ~/Code/cumcm-2026-c
+bash ~/.claude/skills/math-modeling-infra/scripts/build-paper.sh ~/Code/cumcm-2026-c
+```
+
+> 提示：求解环境依赖 `uv`（`curl -LsSf https://astral.sh/uv/install.sh | sh`）；
+> 论文编译依赖 XeLaTeX + ctex 宏包（`brew install --cask mactex-no-gui` 或 BasicTeX + ctex）。
+> macOS 用 `.sh` 脚本即可；若装了 pwsh 也可用 `.ps1` 版。
 
 ## 项目结构
 
@@ -59,22 +111,25 @@ git clone https://github.com/<你的用户名>/math-modeling-infra.git ~/.codex/
 **建骨架**（幂等，已有文件不覆盖）：
 
 ```bash
-bash <skill>/scripts/init-project.sh ~/Code/cumcm-2026-c
-# Windows:
-powershell <skill>/scripts/init-project.ps1 C:\Users\me\cumcm-2026-c
+bash <skill>/scripts/init-project.sh ~/Code/cumcm-2026-c          # Linux / macOS
+powershell <skill>/scripts/init-project.ps1 C:\Users\me\cumcm-2026-c   # Windows
 ```
 
 **初始化求解环境**（uv 建项目 + 装常用依赖）：
 
 ```bash
-bash <skill>/scripts/setup-env.sh <项目目录>
+bash <skill>/scripts/setup-env.sh <项目目录>                      # Linux / macOS
+powershell <skill>/scripts/setup-env.ps1 <项目目录>               # Windows
 ```
 
 **编译论文**（XeLaTeX 跑两遍 + 检查 PDF 是否生成）：
 
 ```bash
-bash <skill>/scripts/build-paper.sh <项目目录>
+bash <skill>/scripts/build-paper.sh <项目目录>                    # Linux / macOS
+powershell <skill>/scripts/build-paper.ps1 <项目目录>             # Windows
 ```
+
+> 三个脚本均为幂等设计：已在项目里跑过、或项目文件已存在时，只会补缺，不会覆盖。
 
 ## 工作节奏
 
