@@ -40,6 +40,7 @@ powershell <skill>/scripts/init-project.ps1 <项目目录>
 | `03-models/code/` | 求解代码，uv 管理的 Python 项目 | 审查通过后 |
 | `04-results/results.md` | 每版结果一行：命名、指标、结论 | 每次求解后追加 |
 | `05-paper/paper-outline.md` | 论文骨架：八股结构，每章写什么 | 写论文前定稿 |
+| `05-paper/` 章节模板（abstract / data-profile / validation-sensitivity / model-evaluation） | 摘要反写 / 数据侧写 / 检验与灵敏度 / 评价推广的写法模板 | 写对应章节前各翻一次 |
 | `06-submission/checklist.md` | 赛前 48h + 提交前检查清单 | 提交前逐项打勾 |
 
 各文件的模板在 `assets/templates/`，里面的 `{{占位符}}` 说明了每一栏该填什么。
@@ -77,6 +78,9 @@ powershell <skill>/scripts/init-project.ps1 <项目目录>
 
 只允许 LaTeX：默认 `CUMCMThesis` 模板（或题目要求的官方模板），
 XeLaTeX + UTF-8 编译，依赖用 uv。摘要最后写，定稿前过 `humanizer-zh`。
+写每一章之前先翻 `05-paper/` 对应的章节模板（abstract / data-profile /
+validation-sensitivity / model-evaluation）；建模与求解章节写完对照
+`modeling-chapter.md` 第十节"去 AI 味"清单自查。
 
 ## 硬规矩
 

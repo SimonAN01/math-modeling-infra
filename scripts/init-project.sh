@@ -34,6 +34,10 @@ put method-selection.md 03-models/method-selection.md
 put results.md         04-results/results.md
 put paper-outline.md   05-paper/paper-outline.md
 put modeling-chapter.md 05-paper/modeling-chapter.md
+put abstract.md         05-paper/abstract.md
+put data-profile.md     05-paper/data-profile.md
+put validation-sensitivity.md 05-paper/validation-sensitivity.md
+put model-evaluation.md 05-paper/model-evaluation.md
 put paper-review.md    05-paper/paper-review.md
 put checklist.md       06-submission/checklist.md
 
