@@ -28,7 +28,7 @@ if (-not (Test-Path $pm)) {
   if ($typed -eq 0) { Say "FAIL" "没有一行完成类型归类（背景/任务/数据/约束/评分线索/干扰）"; $fail = $true }
   else { Say "PASS" ("已归类 {0} 行" -f $typed) }
   if ($p -match '\{\{') { Say "WARN" "仍有 {{占位符}} 行未处理（未挖到的句子要标注，别留模板痕）" } else { Say "PASS" "无占位符残留" }
-  $struct = [regex]::Matches($p, '^\|\s*Q(\d+)\s*\|\s*Q\1\.\d+\s*\|', 'Multiline').Count
+  $struct = [regex]::Matches($p, '^\|\s*Q(\d+)\s*\|\s*(Q\1\.\d+|—|-)\s*\|', 'Multiline').Count
   if ($struct -eq 0) { Say "FAIL" "主问×小问结构表无行"; $fail = $true }
   else { Say "PASS" ("主问×小问结构表 {0} 行" -f $struct) }
 }
@@ -65,16 +65,30 @@ if (-not (Test-Path $map)) {
 } else {
   $m = [System.IO.File]::ReadAllText($map, [System.Text.Encoding]::UTF8)
   if ($m -match '\{\{') { Say "FAIL" "有 {{占位符}} 残留"; $fail = $true } else { Say "PASS" "无占位符残留" }
-  $qs = [regex]::Matches($m, '###\s*Q(\d+)\.(\d+)')
-  if ($qs.Count -eq 0) { Say "FAIL" "没有 ### Qx.y 小问小节"; $fail = $true }
-  else {
-    Say "INFO" ("共 {0} 个小问小节" -f $qs.Count)
+  $subs = [regex]::Matches($m, '###\s*Q(\d+)\.(\d+)')
+  $units = New-Object System.Collections.Generic.List[object]
+  if ($subs.Count -gt 0) {
+    Say "INFO" ("有小问结构：共 {0} 个小问" -f $subs.Count)
+    foreach ($q in $subs) {
+      $units.Add([pscustomobject]@{ Id = ("Q{0}.{1}" -f $q.Groups[1].Value, $q.Groups[2].Value); Index = $q.Index })
+    }
+  } else {
+    $mains = [regex]::Matches($m, '##\s*Q(\d+)')
+    if ($mains.Count -eq 0) { Say "FAIL" "既没有 ### Qx.y 小问，也没有 ## Q 主问小节"; $fail = $true }
+    else {
+      Say "INFO" ("无小问结构：共 {0} 个主问（按主问填表）" -f $mains.Count)
+      foreach ($q in $mains) {
+        $units.Add([pscustomobject]@{ Id = "Q{0}" -f $q.Groups[1].Value; Index = $q.Index })
+      }
+    }
+  }
+  if ($units.Count -gt 0) {
     $keys = @("输入","输出","决策变量","约束条件","可用方法","验证方式","隐含目标","隐含约束","链条关系","创新候选")
-    foreach ($q in $qs) {
-      $start = $q.Index
+    foreach ($u in $units) {
+      $start = $u.Index
       $next = $m.IndexOf('##', $start + 3)
       $block = if ($next -lt 0) { $m.Substring($start) } else { $m.Substring($start, $next - $start) }
-      $qid = "Q{0}.{1}" -f $q.Groups[1].Value, $q.Groups[2].Value
+      $qid = $u.Id
       foreach ($key in $keys) {
         $rm = [regex]::Match($block, '^\|\s*' + $key + '\s*\|\s*(.*?)\s*\|\s*$', 'Multiline')
         $val = $rm.Groups[1].Value.Trim()
@@ -88,7 +102,7 @@ if (-not (Test-Path $map)) {
         $fail = $true
       }
     }
-    if (-not $fail) { Say "PASS" "所有小问十要素齐全" }
+    if (-not $fail) { Say "PASS" "所有建模单元十要素齐全" }
   }
 }
 

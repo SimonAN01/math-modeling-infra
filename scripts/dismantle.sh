@@ -25,7 +25,7 @@ else
   typed=$(grep -cE '^\|\s*[0-9]+\s*\|[^|]*\|\s*(背景|任务|数据|约束|评分线索|干扰|提示词|无需处理)\s*\|' "$PM" || true)
   [ "$typed" -eq 0 ] && { say FAIL "没有一行完成类型归类"; fail=1; } || say PASS "已归类 $typed 行"
   grep -q '{{' "$PM" && say WARN "仍有 {{占位符}} 行未处理" || say PASS "无占位符残留"
-  struct=$(grep -cE '^\|\s*Q[0-9]+\s*\|\s*Q[0-9]+\.[0-9]+\s*\|' "$PM" || true)
+  struct=$(grep -cE '^\|\s*Q[0-9]+\s*\|\s*(Q[0-9]+\.[0-9]+|—|-)\s*\|' "$PM" || true)
   [ "$struct" -eq 0 ] && { say FAIL "主问×小问结构表无行"; fail=1; } || say PASS "主问×小问结构表 $struct 行"
 fi
 
