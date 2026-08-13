@@ -32,6 +32,7 @@ put data-log.md        02-data/data-log.md
 put model-review.md    03-models/model-review.md
 put method-selection.md 03-models/method-selection.md
 put results.md         04-results/results.md
+put judge-view.md      05-paper/judge-view.md
 put paper-outline.md   05-paper/paper-outline.md
 put modeling-chapter.md 05-paper/modeling-chapter.md
 put abstract.md         05-paper/abstract.md

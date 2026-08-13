@@ -41,6 +41,7 @@ powershell <skill>/scripts/init-project.ps1 <项目目录>
 | `04-results/results.md` | 每版结果一行：命名、指标、结论 | 每次求解后追加 |
 | `05-paper/paper-outline.md` | 论文骨架：八股结构，每章写什么 | 写论文前定稿 |
 | `05-paper/` 章节模板（abstract / data-profile / validation-sensitivity / model-evaluation） | 摘要反写 / 数据侧写 / 检验与灵敏度 / 评价推广的写法模板 | 写对应章节前各翻一次 |
+| `05-paper/judge-view.md` | 评委视角与评审要点：四原则权重、官方扣分清单、国一国二区分线 | 写论文时自查，提交前过一遍 |
 | `06-submission/checklist.md` | 赛前 48h + 提交前检查清单 | 提交前逐项打勾 |
 
 各文件的模板在 `assets/templates/`，里面的 `{{占位符}}` 说明了每一栏该填什么。
