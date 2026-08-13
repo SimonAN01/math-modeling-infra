@@ -10,6 +10,7 @@ param([Parameter(Mandatory=$true)][string]$Dest)
 $ErrorActionPreference = "Stop"
 $Root = Split-Path -Parent $PSScriptRoot
 $Tpl = Join-Path $Root "assets\templates"
+$Plb = Join-Path $Root "assets\playbooks"
 
 New-Item -ItemType Directory -Path $Dest -Force | Out-Null
 
@@ -31,6 +32,16 @@ function Put-Template([string]$name, [string]$rel) {
   }
 }
 
+function Put-Playbook([string]$name, [string]$rel) {
+  $target = Join-Path $Dest $rel
+  if (Test-Path $target) {
+    Write-Host "  .  $rel  已存在，跳过"
+  } else {
+    Copy-Item (Join-Path $Plb $name) $target
+    Write-Host "  +  $rel"
+  }
+}
+
 Put-Template "AGENTS.md"        "AGENTS.md"
 Put-Template "handoff.md"       "handoff.md"
 Put-Template "problem-brief.md" "01-problem\problem-brief.md"
@@ -40,13 +51,13 @@ Put-Template "data-log.md"      "02-data\data-log.md"
 Put-Template "model-review.md"  "03-models\model-review.md"
 Put-Template "method-selection.md" "03-models\method-selection.md"
 Put-Template "results.md"       "04-results\results.md"
-Put-Template "judge-view.md"      "05-paper\judge-view.md"
-Put-Template "paper-outline.md"   "05-paper\paper-outline.md"
-Put-Template "modeling-chapter.md" "05-paper\modeling-chapter.md"
-Put-Template "abstract.md"         "05-paper\abstract.md"
-Put-Template "data-profile.md"     "05-paper\data-profile.md"
-Put-Template "validation-sensitivity.md" "05-paper\validation-sensitivity.md"
-Put-Template "model-evaluation.md" "05-paper\model-evaluation.md"
+Put-Playbook "judge-view.md"      "05-paper\judge-view.md"
+Put-Playbook "paper-outline.md"   "05-paper\paper-outline.md"
+Put-Playbook "modeling-chapter.md" "05-paper\modeling-chapter.md"
+Put-Playbook "abstract.md"         "05-paper\abstract.md"
+Put-Playbook "data-profile.md"     "05-paper\data-profile.md"
+Put-Playbook "validation-sensitivity.md" "05-paper\validation-sensitivity.md"
+Put-Playbook "model-evaluation.md" "05-paper\model-evaluation.md"
 Put-Template "paper-review.md"    "05-paper\paper-review.md"
 Put-Template "checklist.md"     "06-submission\checklist.md"
 
@@ -85,6 +96,6 @@ Write-Host '  3. 数据放 02-data/raw/, 处理留痕写 data-log.md'
 Write-Host '  4. 建模先过 03-models/model-review.md 六维审查, 再进 code/ 写代码'
 Write-Host "  5. 求解环境: powershell $(Join-Path $PSScriptRoot 'setup-env.ps1') $Dest"
 Write-Host '  6. 写论文: 05-paper/ (CUMCMThesis 模板), 摘要最后写'
-Write-Host '  7. 提交前: 06-submission/checklist.md 逐项打勾'
+Write-Host '  7. 提交前: paper-check 扫一遍 + 06-submission/checklist.md 逐项打勾'
 Write-Host ""
 Write-Host '每个窗口结束前更新 handoff.md。'

@@ -67,6 +67,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File "$env:USERPROFILE\.claude\sk
 | `init-project` | 建骨架（幂等） | `powershell scripts\init-project.ps1 <目录>` | `bash scripts/init-project.sh <目录>` |
 | `setup-env` | uv 建环境 + 装依赖 | `powershell scripts\setup-env.ps1 <目录>` | `bash scripts/setup-env.sh <目录>` |
 | `build-paper` | XeLaTeX 编译论文 | `powershell scripts\build-paper.ps1 <目录>` | `bash scripts/build-paper.sh <目录>` |
+| `paper-check` | 提交前自动检查（占位符残留 / AI 套话 / 结果命名 / 模板残留） | `powershell scripts\paper-check.ps1 <目录>` | `bash scripts/paper-check.sh <目录>` |
 
 > 以上命令**不必手动记**——对 Agent 说「初始化环境」「编译论文」即可，它会自动执行对应脚本。`init-project` 已包含在快速开始的一条命令里，不用再跑。三个脚本均幂等，重复运行安全。
 

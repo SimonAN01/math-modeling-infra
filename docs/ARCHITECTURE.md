@@ -88,8 +88,8 @@ math-modeling-infra/              ← 框架层（只放"如何做"，版本化�
 │                                    question-map、submission-rule、data-log、
 │                                    model-review、results、paper-review、checklist）
 ├── scripts/                      ← 工具箱（幂等 CLI）：init-project / setup-env /
-│   │                                build-paper / install-skills + roadmap:
-│   │                                paper-check / new-result
+│   │                                build-paper / install-skills / paper-check ✅
+│   │                                （待办：new-result）
 ├── skills/                       ← 打包的第三方 skill（humanizer-zh、
 │                                    scientific-figure-making）
 ├── templates/CUMCMThesis         ← 外部资产（LaTeX 模板，原样）
@@ -104,7 +104,7 @@ math-modeling-infra/              ← 框架层（只放"如何做"，版本化�
                                     蒸馏成"本题扣分点"，供下届同题训练）
 ```
 
-**关键判断**：骨架模板（生成物）与作战手册（知识）必须分目录——`init-project` 只拷贝 templates/，Agent 写论文只读 playbooks/。现在两者混放，靠"有没有 {{占位符}}"区分，Agent 和人都容易拿错。
+**关键判断**：骨架模板（生成物）与作战手册（知识）必须分目录——仓库侧 `templates/` 只放带 {{占位符}} 的生成物，`playbooks/` 只放写作知识。打包规则（2026-08-14 起）：`init-project` 把 `templates/` 全量拷入项目对应目录、把 `playbooks/` 的论文手册拷入 `05-paper/`——**项目保持自包含**（比赛期间无网络、队友未装 skill 也能工作），分层的收益在仓库侧：人和 Agent 一眼分清"生成物"与"知识"。
 
 ## 三、SKILL.md 目标形态（路由表）
 
@@ -157,9 +157,9 @@ description: >-
 
 ## 五、演进路线（分阶段，每步可独立验证）
 
-- **V1（结构分层）**：本文档入 `docs/`；`assets/templates/` 拆成 `playbooks/`（知识）+ `templates/`（骨架）；SKILL.md 收敛为路由表；init 脚本与所有交叉引用同步改；冒烟测试。**不动任何语义内容，只搬家。**
-- **V2（工具箱补缺）**：`scripts/paper-check`（AI 套话扫描 + {{占位符}}残留 + 命名规则检查）、`scripts/new-result`（结果版本命名生成）。检查类工作从"人肉读手册"变为"跑脚本"。
-- **V3（证据层与复盘）**：赛后把官方评阅材料蒸馏成 `calibrations/<年份><题号>.md`（本题扣分点清单）；固化"复盘 → 蒸馏 → 入库 → 挂路由表"流程；第二次踩坑才入库。
+- **V1（结构分层）** ✅ 已执行（2026-08-14）：`assets/templates/` 拆为 `playbooks/`（知识）+ `templates/`（骨架）；SKILL.md 收敛为路由表；init 脚本与交叉引用同步；冒烟测试通过。
+- **V2（工具箱补缺）** 🔶 部分完成：`scripts/paper-check`（占位符残留 / AI 套话扫描 / 命名规则 / 模板残留）已上线（ps1 + sh）；待办：`scripts/new-result`（结果版本命名生成器）。
+- **V3（证据层与复盘）** ⏳：赛后把官方评阅材料蒸馏成 `calibrations/<年份><题号>.md`（本题扣分点清单）；固化"复盘 → 蒸馏 → 入库 → 挂路由表"流程；第二次踩坑才入库。
 
 ## 六、反模式清单（写作规范自警）
 

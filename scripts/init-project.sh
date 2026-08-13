@@ -10,6 +10,7 @@ set -euo pipefail
 
 DEST="${1:?用法: init-project.sh <项目目录>}"
 TPL="$(cd "$(dirname "${BASH_SOURCE[0]}")/../assets/templates" && pwd)"
+PLB="$(cd "$(dirname "${BASH_SOURCE[0]}")/../assets/playbooks" && pwd)"
 
 mkdir -p "$DEST"/{01-problem,02-data/{raw,processed},03-models/code,04-results/figures,05-paper,06-submission}
 cd "$DEST"
@@ -23,6 +24,15 @@ put() { # $1=模板名 $2=目标路径
   fi
 }
 
+putp() { # 从 playbooks 拷入（论文写作手册）
+  if [ -e "$2" ]; then
+    echo "  ·  $2  已存在，跳过"
+  else
+    cp "$PLB/$1" "$2"
+    echo "  +  $2"
+  fi
+}
+
 put AGENTS.md          AGENTS.md
 put handoff.md         handoff.md
 put problem-brief.md   01-problem/problem-brief.md
@@ -32,13 +42,13 @@ put data-log.md        02-data/data-log.md
 put model-review.md    03-models/model-review.md
 put method-selection.md 03-models/method-selection.md
 put results.md         04-results/results.md
-put judge-view.md      05-paper/judge-view.md
-put paper-outline.md   05-paper/paper-outline.md
-put modeling-chapter.md 05-paper/modeling-chapter.md
-put abstract.md         05-paper/abstract.md
-put data-profile.md     05-paper/data-profile.md
-put validation-sensitivity.md 05-paper/validation-sensitivity.md
-put model-evaluation.md 05-paper/model-evaluation.md
+putp judge-view.md      05-paper/judge-view.md
+putp paper-outline.md   05-paper/paper-outline.md
+putp modeling-chapter.md 05-paper/modeling-chapter.md
+putp abstract.md         05-paper/abstract.md
+putp data-profile.md     05-paper/data-profile.md
+putp validation-sensitivity.md 05-paper/validation-sensitivity.md
+putp model-evaluation.md 05-paper/model-evaluation.md
 put paper-review.md    05-paper/paper-review.md
 put checklist.md       06-submission/checklist.md
 
