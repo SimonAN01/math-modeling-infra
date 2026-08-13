@@ -31,7 +31,7 @@ description: 用 Agent 协作做数学建模竞赛的项目工作流——建标
 | 写评价与推广 | `playbooks/model-evaluation.md` | — |
 | 写摘要（最后写） | `playbooks/abstract.md` | — |
 | 比赛中 | `playbooks/race-day.md`（72h 时间轴 + 四硬节点 + 三人分工） | `scripts/paper-check` 每 12h 一次 |
-| 训练 / 复盘 | `calibrations/2025C.md`、`calibrations/2024C.md`（最近两届 C 题官方评分口径） | — |
+| 训练 / 复盘 | `calibrations/` 证据库（按题积累官方评分口径；现有 2024C / 2025C，A/B 题待补） | — |
 | 自审 | `playbooks/judge-view.md`（评委视角）+ `templates/paper-review.md` | `scripts/paper-check <目录>` |
 | 编译论文 | `playbooks/paper-outline.md` 的 LaTeX 硬规则 | `scripts/build-paper <目录>` |
 | 提交 | `templates/checklist.md` 逐项打勾 | `scripts/paper-check <目录>` |
@@ -42,7 +42,7 @@ description: 用 Agent 协作做数学建模竞赛的项目工作流——建标
 
 先问用户三件事（不要多问）：
 
-1. 赛制与题号（如国赛 C 题）+ 一句话说题目在做什么
+1. 赛制与题号（如国赛 A/B/C、美赛 MCM/ICM）+ 一句话说题目在做什么
 2. 时间（开赛时间 / 剩余小时）+ 团队分工（建模 / 编程 / 写作）
 3. 附件数据在哪、有没有官方提交模板（xlsx 结果表、承诺书等）
 
@@ -92,4 +92,4 @@ scripts/install-skills.sh ~/.claude/skills     # Claude Code / opencode
 powershell scripts\install-skills.ps1 "$env:USERPROFILE\.claude\skills"
 ```
 
-装完对 Agent 说「开个新坑，国赛 C 题」即可。
+装完对 Agent 说「开个新坑，国赛 A/B/C 题」或任何赛制即可。

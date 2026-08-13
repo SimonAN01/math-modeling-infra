@@ -31,7 +31,7 @@
 | 打包 skill（出图 + 去 AI 味） | ✅ | scientific-figure-making / humanizer-zh |
 
 **剩余待办（按优先级）**：
-1. 🔶 赛前跑 1--2 次全真模拟（用 2023 C 题 + calibrations/2023C.md 对照打分）
+1. 🔶 赛前跑 1--2 次全真模拟（用 2024C/2025C 旧题 + calibrations 对照打分）
 2. ⏳ 9.7--9.9 赛前检查（见阶段三）
 3. ⏳ 赛后复盘 → 蒸馏新校准记录（V3 闭环）
 

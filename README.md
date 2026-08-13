@@ -2,7 +2,7 @@
 
 用 Agent 协作做数学建模竞赛的项目工作流（skill）。每个文档职责单一，每个新开的 Agent 窗口都知道先读什么、往哪写。
 
-参考 [research-workflow](https://github.com/skJack/research-workflow) 的设计，适配国赛 C 题场景：拆题 → 数据处理 → 建模审查 → 求解 → 写论文 → 提交。
+参考 [research-workflow](https://github.com/skJack/research-workflow) 的设计，**数模竞赛通用**（国赛 A/B/C、美赛、MathorCup 等）：拆题 → 数据处理 → 建模审查 → 求解 → 写论文 → 提交。
 
 ## 快速开始
 
@@ -40,7 +40,7 @@ git clone https://github.com/SimonAN01/math-modeling-infra.git "$env:USERPROFILE
 powershell -NoProfile -ExecutionPolicy Bypass -File "$env:USERPROFILE\.claude\skills\math-modeling-infra\scripts\install-skills.ps1" "$env:USERPROFILE\.claude\skills"
 ```
 
-装完对 Agent 说「开个新坑，国赛 C 题」，它会问你三件事（赛制题号、时间分工、数据位置），然后把整套结构建好。
+装完对 Agent 说「开个新坑，国赛 A/B/C 题」或任何赛制，它会问你三件事（赛制题号、时间分工、数据位置），然后把整套结构建好。
 
 ## 项目结构
 
