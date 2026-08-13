@@ -37,6 +37,7 @@ put AGENTS.md          AGENTS.md
 put handoff.md         handoff.md
 put problem-brief.md   01-problem/problem-brief.md
 put question-map.md    01-problem/question-map.md
+put problem-mining.md   01-problem/problem-mining.md
 put submission-rule.md 01-problem/submission-rule.md
 put data-log.md        02-data/data-log.md
 put model-review.md    03-models/model-review.md

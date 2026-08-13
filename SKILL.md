@@ -19,7 +19,7 @@ description: 用 Agent 协作做数学建模竞赛的项目工作流——建标
 | 任务 | 读什么 | 跑什么 |
 |---|---|---|
 | 开新项目 | 先问三件事（见下），再建骨架 | `scripts/init-project <目录>`（幂等，只补缺不覆盖） |
-| 拆题 | `playbooks/dismantle.md`（生成规范：三遍法→六步流程）+ `templates/problem-brief.md`、`templates/question-map.md`、`templates/submission-rule.md` | `scripts/dismantle <目录>`（校验门，全 PASS 才算拆完） |
+| 拆题 | `playbooks/problem-mining.md`（逐句挖掘，不漏一句）+ `playbooks/dismantle.md`（六步流程）+ `templates/problem-brief.md`、`templates/question-map.md`（小问级）、`templates/submission-rule.md` | `scripts/dismantle <目录>`（校验门，全 PASS 才算拆完） |
 | 动数据 | `templates/data-log.md`（留痕）；写数据侧写章前读 `playbooks/data-profile.md` | — |
 | 选模型 | `templates/method-selection.md`（12 张表 + 最终判断句）、`templates/model-review.md`（六维审查） | — |
 | 找创新点 | `playbooks/innovation.md`（五类型 + 创新卡 + 突破标志自检） | — |
