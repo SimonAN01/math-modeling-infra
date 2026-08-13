@@ -22,13 +22,16 @@ description: 用 Agent 协作做数学建模竞赛的项目工作流——建标
 | 拆题 | `templates/problem-brief.md`、`templates/question-map.md`、`templates/submission-rule.md` | — |
 | 动数据 | `templates/data-log.md`（留痕）；写数据侧写章前读 `playbooks/data-profile.md` | — |
 | 选模型 | `templates/method-selection.md`（12 张表 + 最终判断句）、`templates/model-review.md`（六维审查） | — |
-| 求解 | 审查通过 → `03-models/code/`（uv 项目） | `scripts/setup-env <目录>` |
+| 找创新点 | `playbooks/innovation.md`（五类型 + 创新卡 + 突破标志自检） | — |
+| 求解 | 审查通过 → `03-models/code/`（uv 项目） | `scripts/setup-env <目录>`；跑完用 `scripts/new-result` 生成结果名 |
 | 论文总纲 | `playbooks/paper-outline.md`（先读，八股结构与 LaTeX 硬规则） | — |
 | 写"问题 X 的建立与求解" | `playbooks/modeling-chapter.md`（叙事链/依据三来源/去 AI 味清单） | — |
 | 写数据侧写 | `playbooks/data-profile.md` | — |
 | 写检验与灵敏度 | `playbooks/validation-sensitivity.md` | — |
 | 写评价与推广 | `playbooks/model-evaluation.md` | — |
 | 写摘要（最后写） | `playbooks/abstract.md` | — |
+| 比赛中 | `playbooks/race-day.md`（72h 时间轴 + 四硬节点 + 三人分工） | `scripts/paper-check` 每 12h 一次 |
+| 训练 / 复盘 | `calibrations/<年份><题号>.md`（官方评分细则蒸馏） | — |
 | 自审 | `playbooks/judge-view.md`（评委视角）+ `templates/paper-review.md` | `scripts/paper-check <目录>` |
 | 编译论文 | `playbooks/paper-outline.md` 的 LaTeX 硬规则 | `scripts/build-paper <目录>` |
 | 提交 | `templates/checklist.md` 逐项打勾 | `scripts/paper-check <目录>` |
