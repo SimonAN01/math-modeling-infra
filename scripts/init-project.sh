@@ -44,6 +44,7 @@ put method-selection.md 03-models/method-selection.md
 put results.md         04-results/results.md
 putp judge-view.md      05-paper/judge-view.md
 putp innovation.md       05-paper/innovation.md
+putp dismantle.md        05-paper/dismantle.md
 putp race-day.md         05-paper/race-day.md
 putp paper-outline.md   05-paper/paper-outline.md
 putp modeling-chapter.md 05-paper/modeling-chapter.md

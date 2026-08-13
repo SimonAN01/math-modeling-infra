@@ -42,9 +42,9 @@
 
 **infra 配合的动作清单**（何时做、做几次由你们安排，这里只列"做什么、用什么工具"）：
 
-- [ ] 精读 C050 国一论文，对照 `calibrations/2023C.md` 逐条批注（哪里扣分、哪里加分）
-- [ ] 用 infra 全流程跑通一道旧题：`init-project` → 拆题 → 数据留痕 → 建模审查 → 结果（`new-result` 命名）→ `paper-check`
-- [ ] 至少一次全流程模拟（完整 72h 或压缩版，**时间自定**），全程按 `playbooks/race-day.md` 走，赛后用 `calibrations/2023C.md` 复盘模板打分
+- [ ] 精读 C050 国一论文，对照 `calibrations/2025C.md`、`2024C.md` 逐条批注（哪里扣分、哪里加分）
+- [ ] 用 infra 全流程跑通一道旧题：`init-project` → 拆题（`scripts/dismantle` 校验）→ 数据留痕 → 建模审查 → 结果（`new-result` 命名）→ `paper-check`
+- [ ] 至少一次全流程模拟（完整 72h 或压缩版，**时间自定**），全程按 `playbooks/race-day.md` 走，赛后用 `calibrations/2025C.md` 复盘模板打分
 - [ ] 赛前环境演练：三台机器 `init-project` + `setup-env` + `build-paper` + `paper-check` 各跑通一次
 - [ ] 打印三张纸：SKILL.md 路由表、race-day.md 时间轴、judge-view.md 扣分清单
 
