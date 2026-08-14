@@ -24,7 +24,8 @@ description: 用 Agent 协作做数学建模竞赛的项目工作流——建标
 | 选模型 | `templates/method-selection.md`（12 张表 + 最终判断句）、`templates/model-review.md`（六维审查） | — |
 | 找创新点 | `playbooks/innovation.md`（五类型 + 创新卡 + 突破标志自检） | — |
 | 求解 | 审查通过 → `03-models/code/`（uv 项目） | `scripts/setup-env <目录>`；跑完用 `scripts/new-result` 生成结果名 |
-| 论文总纲 | `playbooks/paper-outline.md`（先读，八股结构与 LaTeX 硬规则） | — |
+| 写论文总纲 | `playbooks/paper-outline.md`（先读，八股结构与 LaTeX 硬规则） | — |
+| 出图 | `playbooks/figures.md`（每章图清单 + 图型函数）+ `scientific-figure-making` skill（风格规范） | `03-models/code/figures/plots.py`（填数据出图，png+pdf） |
 | 写"问题 X 的建立与求解" | `playbooks/modeling-chapter.md`（叙事链/依据三来源/去 AI 味清单） | — |
 | 写数据侧写 | `playbooks/data-profile.md` | — |
 | 写检验与灵敏度 | `playbooks/validation-sensitivity.md` | — |

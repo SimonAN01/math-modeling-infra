@@ -56,6 +56,13 @@ putp model-evaluation.md 05-paper/model-evaluation.md
 put paper-review.md    05-paper/paper-review.md
 put checklist.md       06-submission/checklist.md
 
+# 绘图代码库（figures/style.py + plots.py）拷入 03-models/code/，幂等
+FIG_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../code-templates/figures" 2>/dev/null && pwd)"
+if [ -d "$FIG_DIR" ] && [ ! -d "$DEST/03-models/code/figures" ]; then
+  cp -r "$FIG_DIR" "$DEST/03-models/code/"
+  echo "  +  03-models/code/figures  (绘图代码库)"
+fi
+
 # CUMCMThesis 模板（不含微软字体）自动拷入 05-paper/，幂等
 TPL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../templates/CUMCMThesis" && pwd)"
 if [ -d "$TPL_DIR" ] && [ ! -d "$DEST/05-paper/CUMCMThesis" ]; then

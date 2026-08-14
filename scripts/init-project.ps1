@@ -65,6 +65,14 @@ Put-Playbook "model-evaluation.md" "05-paper\model-evaluation.md"
 Put-Template "paper-review.md"    "05-paper\paper-review.md"
 Put-Template "checklist.md"     "06-submission\checklist.md"
 
+# 绘图代码库（figures/style.py + plots.py）拷入 03-models/code/，幂等
+$FigDir = Join-Path $Root "code-templates\figures"
+$FigTarget = Join-Path $Dest "03-models\code\figures"
+if ((Test-Path $FigDir) -and -not (Test-Path $FigTarget)) {
+  Copy-Item $FigDir $FigTarget -Recurse
+  Write-Host "  +  03-models\code\figures  (绘图代码库)"
+}
+
 # CUMCMThesis 模板（不含微软字体）自动拷入 05-paper/，幂等
 $TplDir = Join-Path $Root "templates\CUMCMThesis"
 $TplTarget = Join-Path $Dest "05-paper\CUMCMThesis"
