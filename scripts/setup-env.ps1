@@ -20,7 +20,9 @@ if (-not (Test-Path (Join-Path $CodeDir "pyproject.toml"))) {
   Push-Location $CodeDir
   try {
     uv init --no-workspace 2>&1 | Out-Host
+    if ($LASTEXITCODE -ne 0) { throw "环境初始化失败，尚未就绪。请检查上方错误。" }
     uv add pandas numpy scipy scikit-learn matplotlib statsmodels pulp ortools deap 2>&1 | Out-Host
+    if ($LASTEXITCODE -ne 0) { throw "依赖安装失败，尚未就绪。请检查网络和上方错误。" }
   } finally {
     Pop-Location
   }
@@ -28,6 +30,7 @@ if (-not (Test-Path (Join-Path $CodeDir "pyproject.toml"))) {
   Push-Location $CodeDir
   try {
     uv add pandas numpy scipy scikit-learn matplotlib statsmodels pulp ortools deap 2>&1 | Out-Host
+    if ($LASTEXITCODE -ne 0) { throw "依赖安装失败，尚未就绪。请检查网络和上方错误。" }
   } finally {
     Pop-Location
   }

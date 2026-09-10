@@ -1,0 +1,34 @@
+{
+  "status": "template",
+  "summary_purpose": "",
+  "team_confirmed": false,
+  "records": [],
+  "example_ids": [],
+  "core_leadership": [
+    {
+      "stage": "模型结构与创新点",
+      "team_led": null,
+      "contribution": ""
+    },
+    {
+      "stage": "公式推导与求解步骤",
+      "team_led": null,
+      "contribution": ""
+    },
+    {
+      "stage": "程序逻辑与参数设置",
+      "team_led": null,
+      "contribution": ""
+    },
+    {
+      "stage": "结果分析与论文核心论述",
+      "team_led": null,
+      "contribution": ""
+    },
+    {
+      "stage": "论文撰写与图表制作等",
+      "team_led": null,
+      "contribution": ""
+    }
+  ]
+}

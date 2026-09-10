@@ -49,3 +49,7 @@
 ## 提交规则速记
 
 {{从 submission-rule.md 提炼：电子版第一页、30 页 / 20MB、AI 工具使用声明、论文命名、是否单独交 xlsx、承诺书}}
+
+新手入口：[开始使用](开始使用.md)。AI详情操作：[使用说明](05-paper/ai-disclosure.md)；论文证据：[对账表](05-paper/evidence-map.md)。
+
+写论文时先读 [章节写作入口](05-paper/guides/writing-workflow.md)，只加载本章指南。假设、符号、文献与支撑清单按对应台账留痕；质量评分是内部训练口径，不代表官方评分。

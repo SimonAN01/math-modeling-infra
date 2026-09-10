@@ -5,7 +5,7 @@
 #   ./install-skills.sh ~/.codex/skills      # Codex
 #   ./install-skills.sh                      # 默认 ~/.claude/skills
 #
-# 幂等：重复执行会覆盖同名文件，不会留旧文件。
+# 重复执行会更新同名文件，保留其他文件。
 
 set -euo pipefail
 
@@ -15,6 +15,8 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 mkdir -p "$DEST/math-modeling-infra"
 cp -f "$ROOT/SKILL.md" "$ROOT/README.md" "$DEST/math-modeling-infra/"
 cp -rf "$ROOT/assets" "$ROOT/scripts" "$DEST/math-modeling-infra/"
+cp -rf "$ROOT/templates" "$ROOT/code-templates" "$ROOT/docs" "$ROOT/calibrations" "$ROOT/skills" "$DEST/math-modeling-infra/"
+cp -f "$ROOT/LICENSE" "$DEST/math-modeling-infra/"
 
 for s in scientific-figure-making humanizer-zh; do
   cp -rf "$ROOT/skills/$s" "$DEST/"

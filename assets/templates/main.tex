@@ -1,0 +1,57 @@
+% 电子版入口。与 CUMCMThesis 示例手册分开维护。
+\documentclass[withoutpreface]{cumcmthesis}
+\title{待填写：论文题目}
+\begin{document}
+\maketitle
+\begin{abstract}
+待填写：正文和结果核验完成后反写摘要。
+\keywords{待填写}
+\end{abstract}
+
+\section{问题重述}
+待填写。
+\section{问题分析}
+待填写。
+\section{模型假设}
+待填写：仅采用团队确认的必要假设，说明依据与后文作用。
+\section{符号说明}
+% 从实际公式提取全局主要符号，局部符号就近定义。
+\begin{table}[htbp]
+\centering
+\caption{主要符号说明}
+\label{tab:symbols}
+\begin{tabularx}{0.95\textwidth}{cXc}
+\toprule
+符号 & 含义 & 单位 \\
+\midrule
+待填写 & 待填写 & 待填写 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+\section{模型建立与求解}
+待填写：每个结论关联真实结果版本。
+\section{检验与灵敏度分析}
+待填写。
+\section{模型评价}
+待填写。
+
+% 必须在参考文献之前；声明与支撑材料由同一份台账生成。
+\input{ai-statement.tex}
+\begin{thebibliography}{99}
+\bibitem{pending} 待填写：核实作者、题名、年份和 DOI / 来源后列入。
+\end{thebibliography}
+
+% 正文页数计至参考文献结束，包含AI声明；附录从新页开始。
+\clearpage
+\begin{appendices}
+\section{支撑材料文件列表}
+待填写：使用 AI 时列出 AI工具使用详情.pdf，归入支撑材料。
+\section{软件环境与运行说明}
+待填写：实际语言、库与求解器版本、启动目录、输入输出及复现命令。
+\section{完整源程序}
+待填写：按问题列出完整源码、公共模块和实际软件交互命令，与支撑包保持同版。
+% 填入真实源码路径后可用 \lstinputlisting 引入，避免手工复制漂移。
+\section{补充结果}
+待填写：必要长表和补充检验；核心结果仍保留在正文。
+\end{appendices}
+\end{document}

@@ -1,96 +1,85 @@
-# math-modeling-infra
+# 数模工作流
 
-用 Agent 协作做数学建模竞赛的项目工作流（skill）。每个文档职责单一，每个新开的 Agent 窗口都知道先读什么、往哪写。
+帮你把题目、数据、模型、结果和论文放在同一个项目里，按阶段推进。模型、假设与结论由团队决定，AI负责执行和整理。
 
-参考 [research-workflow](https://github.com/skJack/research-workflow) 的设计，**数模竞赛通用**（国赛 A/B/C、美赛、MathorCup 等）：拆题 → 数据处理 → 建模审查 → 求解 → 写论文 → 提交。
+## 已经有项目
 
-## 快速开始
+打开项目根目录的 **开始使用.md**。先让 AI 读 `AGENTS.md` 和 `handoff.md`，报告当前进度与下一步；不用再克隆框架，也不用先安装技能。
 
-在自己建好的项目目录里执行一条命令（下载框架 + 建好项目骨架，10 个模板文件一次生成）：
+[预览新手指南](assets/templates/开始使用.md) · [AI详情表格说明](assets/playbooks/ai-disclosure.md)
 
-**Windows（PowerShell）：**
+## 创建另一个比赛项目
 
-```powershell
-git clone https://github.com/SimonAN01/math-modeling-infra.git math-modeling-infra; powershell -NoProfile -ExecutionPolicy Bypass -File .\math-modeling-infra\scripts\init-project.ps1 .
-```
+从本框架目录运行以下任一命令。目标目录可以包含中文和空格；只补缺失文件，不覆盖已有资料。
 
-**Linux / macOS：**
-
-```bash
-git clone https://github.com/SimonAN01/math-modeling-infra.git math-modeling-infra && bash math-modeling-infra/scripts/init-project.sh .
-```
-
-然后按 `AGENTS.md` 里的提示填好赛题信息，对 Agent 说「开始拆题」即可。
-
-> 依赖：git；求解环境需 [uv](https://astral.sh/uv/)；论文编译需 XeLaTeX + ctex 宏包（MiKTeX / TeX Live / mactex）。
-
-## 安装为 skill
-
-框架**自带**两个配套 skill：`scientific-figure-making`（出图规范）、`humanizer-zh`（定稿前去 AI 味），都打包在仓库 `skills/` 子目录里——装一次就是三个：
-
-```bash
-# 克隆后一条命令装齐（含自带的两个配套 skill）
-bash math-modeling-infra/scripts/install-skills.sh ~/.claude/skills      # Claude Code / opencode
-bash math-modeling-infra/scripts/install-skills.sh ~/.codex/skills       # Codex
-```
+Windows：
 
 ```powershell
-# Windows
-git clone https://github.com/SimonAN01/math-modeling-infra.git "$env:USERPROFILE\.claude\skills\math-modeling-infra"
-powershell -NoProfile -ExecutionPolicy Bypass -File "$env:USERPROFILE\.claude\skills\math-modeling-infra\scripts\install-skills.ps1" "$env:USERPROFILE\.claude\skills"
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/init-project.ps1 "C:/你的比赛项目"
 ```
 
-装完对 Agent 说「开个新坑，国赛 A/B/C 题」或任何赛制，它会问你三件事（赛制题号、时间分工、数据位置），然后把整套结构建好。
+macOS / Linux：
 
-## 项目结构
-
-```
-你的项目/
-├── AGENTS.md                项目总纲：赛题、分工、硬规矩 —— 每个新窗口第一个读
-├── handoff.md               进度交接 —— 每个窗口结束前更新
-├── 01-problem/              拆题：problem-brief / question-map / submission-rule
-├── 02-data/                 raw/（原始数据，不覆盖）+ processed/ + data-log.md 留痕
-├── 03-models/               model-review.md 六维审查（不过审不进 code/）+ method-selection.md（12 张方法选型表）+ code/（uv 项目）
-├── 04-results/              results.md 每版结果一行 + figures/ 论文用图
-├── 05-paper/                paper-outline.md（八股结构 + LaTeX 硬规则）+ 章节模板（abstract / data-profile / validation-sensitivity / model-evaluation）+ judge-view.md（评委视角与评审要点）+ paper-review.md（自审/收口）+ CUMCMThesis 模板（建骨架时自动拷入）
-├── 06-submission/           checklist.md 赛前 48h + 提交前检查
+```bash
+bash scripts/init-project.sh "$HOME/你的比赛项目"
 ```
 
-> CUMCMThesis 模板随仓库自带（`templates/CUMCMThesis`，原样未改），
-> 微软字体（simsun.ttc / simkai.ttf）不随仓库分发——Windows 下 `build-paper`
-> 会从系统字体目录自动补齐，Linux / macOS 需自行放入字体。
+然后在 AI 助手中打开新建项目，把题面放入 `01-problem/`，附件放入 `02-data/raw/`，按“开始使用”中的示例提问。AI整理过程记录；团队确认模型选择和核验结果。
 
-## 脚本
+## 文件分工
 
-| 脚本 | 作用 | Windows | Linux / macOS |
-|---|---|---|---|
-| `init-project` | 建骨架（幂等） | `powershell scripts\init-project.ps1 <目录>` | `bash scripts/init-project.sh <目录>` |
-| `setup-env` | uv 建环境 + 装依赖 | `powershell scripts\setup-env.ps1 <目录>` | `bash scripts/setup-env.sh <目录>` |
-| `build-paper` | XeLaTeX 编译论文 | `powershell scripts\build-paper.ps1 <目录>` | `bash scripts/build-paper.sh <目录>` |
-| `paper-check` | 提交前自动检查（占位符残留 / AI 套话 / 结果命名 / 模板残留） | `powershell scripts\paper-check.ps1 <目录>` | `bash scripts/paper-check.sh <目录>` |
-| `new-result` | 结果版本命名生成器（v<序号>_<改动的核心>） | `powershell scripts\new-result.ps1 "改动" <目录>` | `bash scripts/new-result.sh "改动" <目录>` |
-| `dismantle` | 拆题机校验门（problem-brief / question-map 完整性与占位符） | `powershell scripts\dismantle.ps1 <目录>` | `bash scripts/dismantle.sh <目录>` |
+| 位置 | 用途 |
+|---|---|
+| 比赛项目根目录 | 当前赛题的工作区，日常在这里操作 |
+| `01-problem` 至 `06-submission` | 题目、数据、模型、结果、论文、提交件 |
+| 项目中的 `05-paper/guides/` | 写作参考手册，按需打开 |
+| 本框架的 `assets/`、`scripts/`、`templates/` | 可复用的母版与工具；修改后用于以后新建的项目 |
+| `SKILL.md` | 给 AI 的任务入口，新手不必通读 |
 
-> 以上命令**不必手动记**——对 Agent 说「初始化环境」「编译论文」即可，它会自动执行对应脚本。`init-project` 已包含在快速开始的一条命令里，不用再跑。三个脚本均幂等，重复运行安全。
+框架模板与项目记录有意分开：比赛中填写项目文件；框架升级不会自动覆盖已填写资料。
 
-## 工作节奏
+## 需要时才用的工具
 
+以下路径相对本框架目录。命令由 AI执行即可，不要求新手背下来。
+
+| 想做什么 | 脚本 | 使用时机 |
+|---|---|---|
+| 看环境是否准备好 | `doctor.ps1` / `doctor.sh` | 第一次使用；只读，不安装软件 |
+| 准备 Python 环境 | `setup-env.ps1` / `setup-env.sh` | 开始求解前，依赖用 uv |
+| 编译论文 | `build-paper.ps1` / `build-paper.sh` | `05-paper/main.tex` 已有正文后 |
+| 生成 AI 声明和详情 | `ai-disclosure.py build` | 团队完成记录核验后；先看 AI使用说明 |
+| 提交检查 | `paper-check.ps1` / `paper-check.sh` | 内容接近完成时，空骨架失败是正常的 |
+| 拆题完整性检查 | `dismantle.ps1` / `dismantle.sh` | 拆题后 |
+| 给结果版本命名 | `new-result.ps1` / `new-result.sh` | 一次求解结束后 |
+
+只读检查示例：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/doctor.ps1 "C:/你的比赛项目"
 ```
-拆题 → 数据处理 → 建模审查 → 求解 → 写论文 → 提交
+
+阅读和整理材料不依赖求解环境；运行Python需要 uv，生成PDF需要 XeLaTeX 与中文宏包。工具存在不代表宏包齐全，赛前实际编译一次。CUMCMThesis 的微软字体不随框架分发；Windows 编译脚本可从系统字体目录补齐，其他系统需提供模板所需字体。
+
+## 可选 安装为技能
+
+在多个项目重复使用时再安装。安装会更新目标目录中的同名文件，保留其他文件；本项目直接使用无需此步。
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/install-skills.ps1 "$env:USERPROFILE/.codex/skills"
 ```
 
-**六维审查在写代码之前。** 模型不过审不许写代码。
+```bash
+bash scripts/install-skills.sh "$HOME/.codex/skills"
+```
 
-## 警示
+目标目录可换为所用助手的技能目录。安装包括数模框架、出图规范和语言润色技能；框架所需模板与代码资源一并复制。
 
-- 效果突然变好，先查数据泄漏（标准化用了全量均值 / 验证集参与训练）
-- 先精确解后启发式：能 LP/IP/MIP 就别一上来模拟退火、遗传
-- 先判题型再选模型：预测 / 评价 / 优化，组合题别误判成纯优化题
-- 数据每步留痕，不为了结果好看乱删数据
-- 提交件与论文数字对不上 = 判负风险，走 checklist 核对
+## 维护与来源
 
-## License
+竞赛要求维护在项目 `01-problem/submission-rule.md`，执行核对维护在 `06-submission/checklist.md`；其他页面只提供入口。详细任务路由见 [SKILL.md](SKILL.md)，本轮外部参考与取舍见 [GitHub调研](docs/github-skills-review.md)。规则以当届官方通知为准。
 
-- 框架本体：Apache License 2.0
-- 自带 `humanizer-zh`：MIT（原作者 歸藏）
-- 自带 `scientific-figure-making`：MIT（源自 [figures4papers](https://github.com/SimonAN01/figures4papers)）
+框架本体：Apache License 2.0；humanizer-zh：MIT（原作者歸藏）；scientific-figure-making：MIT（源自 figures4papers）。具体范围以各目录许可证为准。
+
+## 章节写作与质量核查
+
+本轮整合20份写作材料，新增重述、分析、假设、符号、文献附录和证据评分指南。项目入口是 `05-paper/guides/writing-workflow.md`，每章提供输入、提示词和验收项；Windows/Bash初始化自动分发。材料来源与规则取舍见 [整合记录](docs/writing-materials-integration.md)。

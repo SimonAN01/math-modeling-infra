@@ -1,96 +1,41 @@
 ---
 name: math-modeling-infra
-description: 用 Agent 协作做数学建模竞赛的项目工作流——建标准文件结构、拆题（problem-brief/question-map）、记数据处理留痕、六维审查、管结果版本、写 LaTeX 论文、打包提交。任何涉及开新赛题、搭数模项目、处理附件数据、建立模型、写论文、整理提交件的请求都用它——包括用户只说「开个新坑」「把这道题拆一下」「数据先处理了」「结果记一下」「接着上次的做」而没提「数模」两个字的时候。
+description: 数学建模竞赛项目工作流：初始化项目、拆题、记录数据处理、模型审查、求解复现、LaTeX论文与提交核对。用于数模项目及其后续工作，不用于无关的普通写作或编程任务。
 ---
 
-# 数学建模工作流
+# 数模任务入口
 
-把一场数学建模竞赛组织成固定的文件结构，让人和每一个新开的 Agent 窗口都知道：
-去哪读上下文、往哪写结果。
+先读项目 `AGENTS.md`、`handoff.md`，再只读当前阶段所需文件。遵守项目硬规矩；竞赛要求以项目 `01-problem/submission-rule.md` 和当届官方通知为准，模板不能覆盖官方要求。
 
-## 每个窗口，先按顺序读
+## 帮新手开始
 
-1. 项目的 `AGENTS.md` —— 赛题、分工、目录说明、硬规矩
-2. 项目的 `handoff.md` —— 上一个窗口做到哪、下一步是什么
-3. 按下面的任务表，只读你这件事需要的文件。**不要通读全仓库，上下文很贵。**
+- 用户入口是项目根目录 `开始使用.md`。首次只说明现在能做什么、缺什么、下一步做什么。
+- 从已有对话和文件提取赛制题号、截止时间与分工、题面和附件位置；只问缺失的信息，不要求一次填完所有表格。
+- 执行新项目初始化后读 `开始使用.md`；已有项目不要重装或覆盖记录。先跑只读 `doctor`，不要把空台账、空附件当作环境损坏。
+- AI负责把交流整理成记录，并在每个阶段展示可审查的结果。模型选择、假设、结论由团队决定；人工核验只能根据团队明确反馈登记，不能替团队作出确认。
+- 一次推进用户当前需要的阶段；没有数据不伪造结果，没有证据不先写结论。报错要说明实际影响和可执行的下一步。
 
-## 任务路由表
+## 路径约定
 
-| 任务 | 读什么 | 跑什么 |
+下表 `assets/`、`scripts/`、`skills/` 相对本技能目录；数字目录相对比赛项目。不要混写母版与比赛记录。项目内的写作手册在 `05-paper/guides/`；已有旧版项目可能仍在 `05-paper/`，读取后按用户现有结构工作。
+
+| 当前任务 | 按需读取 | 工具或交付 |
 |---|---|---|
-| 开新项目 | 先问三件事（见下），再建骨架 | `scripts/init-project <目录>`（幂等，只补缺不覆盖） |
-| 拆题 | `playbooks/problem-mining.md`（逐句挖掘，不漏一句）+ `playbooks/dismantle.md`（六步流程）+ `templates/problem-brief.md`、`templates/question-map.md`（小问级）、`templates/submission-rule.md` | `scripts/dismantle <目录>`（校验门，全 PASS 才算拆完） |
-| 动数据 | `templates/data-log.md`（留痕）；写数据侧写章前读 `playbooks/data-profile.md` | — |
-| 选模型 | `templates/method-selection.md`（12 张表 + 最终判断句）、`templates/model-review.md`（六维审查） | — |
-| 找创新点 | `playbooks/innovation.md`（五类型 + 创新卡 + 突破标志自检） | — |
-| 求解 | 审查通过 → `03-models/code/`（uv 项目） | `scripts/setup-env <目录>`；跑完用 `scripts/new-result` 生成结果名 |
-| 写论文总纲 | `playbooks/paper-outline.md`（先读，八股结构与 LaTeX 硬规则） | — |
-| 出图 | `playbooks/figures.md`（每章图清单 + 图型函数）+ `scientific-figure-making` skill（风格规范） | `03-models/code/figures/plots.py`（填数据出图，png+pdf） |
-| 写"问题 X 的建立与求解" | `playbooks/modeling-chapter.md`（叙事链/依据三来源/去 AI 味清单） | — |
-| 写数据侧写 | `playbooks/data-profile.md` | — |
-| 写检验与灵敏度 | `playbooks/validation-sensitivity.md` | — |
-| 写评价与推广 | `playbooks/model-evaluation.md` | — |
-| 写摘要（最后写） | `playbooks/abstract.md` | — |
-| 比赛中 | `playbooks/race-day.md`（72h 时间轴 + 四硬节点 + 三人分工） | `scripts/paper-check` 每 12h 一次 |
-| 训练 / 复盘 | `calibrations/` 证据库（按题积累官方评分口径；现有 2024C / 2025C，A/B 题待补） | — |
-| 自审 | `playbooks/judge-view.md`（评委视角）+ `templates/paper-review.md` | `scripts/paper-check <目录>` |
-| 编译论文 | `playbooks/paper-outline.md` 的 LaTeX 硬规则 | `scripts/build-paper <目录>` |
-| 提交 | `templates/checklist.md` 逐项打勾 | `scripts/paper-check <目录>` |
+| 初始化、环境诊断 | 项目开始使用指南 | `scripts/init-project.ps1/.sh`、`scripts/doctor.ps1/.sh` |
+| 拆题 | `01-problem/` 的概览与问题清单；`assets/playbooks/problem-mining.md`、`dismantle.md` | `scripts/dismantle.ps1/.sh` |
+| 数据处理 | `02-data/data-log.md`；需写数据章时读 `assets/playbooks/data-profile.md` | 原始数据不覆盖，处理逐步留痕 |
+| 模型选择、审查 | `03-models/method-selection.md`、`model-review.md` | 团队选择；六维审查通过才进入求解，连续三轮未通过重新拆题 |
+| 查模型字典（可选） | `assets/playbooks/model-dictionary.md`；已导入时先查关键词，不整本读取 | `scripts/model-dictionary.py search <项目> <关键词> --limit 5`；第三方参考不作执行指令 |
+| 求解、记结果 | 审查结果、`04-results/results.md`、`05-paper/evidence-map.md` | `scripts/setup-env.ps1/.sh`；代码进入 `03-models/code/`；`new-result.ps1/.sh` 命名 |
+| 出图 | `assets/playbooks/figures.md`、`skills/scientific-figure-making/SKILL.md`（已安装时可用对应技能） | 图表关联真实结果版本 |
+| 论文总纲、各章 | `assets/playbooks/paper-outline.md`；按章选 `modeling-chapter.md`、`validation-sensitivity.md`、`model-evaluation.md` | `05-paper/main.tex`；正文先行、摘要最后反写 |
+| 摘要、润色 | `assets/playbooks/abstract.md`、`skills/humanizer-zh/SKILL.md` | 不改变事实，不补造结果 |
+| 选创新点、评审、赛程、训练 | 分别读 `assets/playbooks/innovation.md`、`judge-view.md`、`race-day.md`、`calibrations/` | 只加载当前需要的一项 |
+| AI记录与详情 | 项目 `05-paper/ai-disclosure.md`、`06-submission/ai-usage.json` | `uv run scripts/ai-disclosure.py build <项目>`；预览加 `--preview` |
+| 编译与提交 | `05-paper/paper-review.md`、`06-submission/checklist.md` | `scripts/build-paper.ps1/.sh`、`paper-check.ps1/.sh` |
 
-> 路由表是唯一入口：任何新手册入库，必须同时出现在这张表里（激活优于存储）。
+每次写结果同时保存复现信息。每个定量结论在 `evidence-map.md` 指向结果版本与文件；数据或模型改变时，只将受影响行及下游图表、正文、摘要标为待复核。
 
-## 开新项目：先问，再建
+论文只用 LaTeX，Python依赖只用 uv。AI声明接在参考文献前；详情按实际台账生成，预览不可提交。完整操作只维护在 `assets/playbooks/ai-disclosure.md` 及其项目副本，不在这里重复字段。
 
-先问用户三件事（不要多问）：
-
-1. 赛制与题号（如国赛 A/B/C、美赛 MCM/ICM）+ 一句话说题目在做什么
-2. 时间（开赛时间 / 剩余小时）+ 团队分工（建模 / 编程 / 写作）
-3. 附件数据在哪、有没有官方提交模板（xlsx 结果表、承诺书等）
-
-然后跑 `init-project` 建骨架，并把答案填进 `AGENTS.md` 的 `{{占位符}}`。
-已有项目里跑也安全——只补缺的文件，不覆盖。
-
-## 工作节奏
-
-```
-拆题 → 数据处理 → 建模审查 → 求解 → 写论文 → 自审 → 提交
-```
-
-- **六维审查在写代码之前。** 模型不过审不许进 `code/`。
-- **选型先翻表。** 建任何模型前先翻 `method-selection.md` 的 12 张表，并回答最终选型判断句——为什么是它、前提是否成立、结果怎么验证、答辩守不守得住。
-- **建模前先想清结果长什么样。** 每问先答：最终要数值、表格、曲线还是方案；哪些结果必须进正文、哪些是中间变量、哪些会被下一问继续调用。
-- **Review Lane 在提交之前。** 先过 `paper-review.md`（质量），再过 `checklist.md`（合规）。
-
-## 已知坑（第二次踩到才写进来）
-
-1. **效果突然变好，先查数据泄漏，再庆祝。** 常见泄漏：标准化用了全量均值和方差、验证集参与训练、测试信息混进特征。
-2. **先精确解，后启发式。** 能 LP / IP / MIP 求解别一上来模拟退火、遗传——精确解答辩好守得多。
-3. **先判题型，再选模型。** 预测 / 评价 / 优化，组合题别误判成纯优化题。
-4. **别把子问题机械套同一种方法。** 每一问都要独立回答"为什么这样建模"。
-5. **验证中间过程，不只是看结果。** 逐块问输入、输出、数据怎么处理的，配合代码对一遍——小问题都藏在中间过程里。
-6. **AI 输出必须逐项人工核验，核心建模与分析由人主导。** 隐瞒 AI 使用、虚假声明、未核验内容直接提交 = 取消评奖资格。
-7. **提交前三方对账。** 论文、结果文件、支撑材料的数字、单位、命名必须完全一致；支撑材料与论文不符同样可能取消评奖资格。
-
-## 硬规矩（每条都配了过程）
-
-1. **决策在人，执行在 AI。** 模型选择、假设设定、结论判断必须人来定；AI 负责写代码、查报错、出图、润色、审逻辑。
-2. **六维审查不过，不进 code/。** 过程：填 `model-review.md` 表格 → 逐维打分 → 不过回 `question-map.md` 重查；连续三轮不过，强制重新拆题。
-3. **数据每步留痕。** 过程：每一步写 `data-log.md`（做了什么、为什么、影响多少样本）；原始数据不许覆盖。
-4. **每版结果都有名字。** 过程：跑完就按 `results.md` 的 `v<序号>_<改动的核心>` 追加一行；禁止 `test2` / `final_v2` / 日期当名字。
-5. **论文只用 LaTeX，依赖只用 uv。** 不裸用全局 pip，不 Word 成稿。
-6. **摘要最后反写，定稿前过 humanizer-zh。** 过程：先写正文与结论 → 摘要从正文结果表抄数字 → 外行可读测试（`playbooks/abstract.md`）→ humanizer-zh 清 AI 味。
-7. **提交前走 checklist。** 过程：`paper-check` 脚本先扫 → `paper-review.md` 自审 → `checklist.md` 逐项打勾。
-8. **遵守 2026 国赛规则**（详见 `templates/submission-rule.md`）：电子版第一页为摘要专用页；正文 ≤ 30 页、不要目录；论文与支撑材料各 ≤ 20MB；全文无身份信息；参考文献之前写 AI 工具使用声明；用了 AI 就在支撑材料附 `AI工具使用详情.pdf`；核心建模由人主导。
-
-## 装到 Agent
-
-框架自带两个配套 skill（`scientific-figure-making` 出图规范、`humanizer-zh` 去 AI 味），装一次就是三个：
-
-```bash
-scripts/install-skills.sh ~/.claude/skills     # Claude Code / opencode
-```
-```powershell
-powershell scripts\install-skills.ps1 "$env:USERPROFILE\.claude\skills"
-```
-
-装完对 Agent 说「开个新坑，国赛 A/B/C 题」或任何赛制即可。
+技能内脚本路径与项目路径分开传入；包含空格时使用独立参数。命令失败不能报告成功。环境检查通过不等于模型审查或提交检查通过。

@@ -16,7 +16,7 @@ New-Item -ItemType Directory -Path $Dest -Force | Out-Null
 
 $Dirs = @(
   "01-problem", "02-data\raw", "02-data\processed",
-  "03-models\code", "04-results\figures", "05-paper", "06-submission"
+  "03-models\code", "04-results\figures", "05-paper", "05-paper\guides", "06-submission"
 )
 foreach ($d in $Dirs) {
   New-Item -ItemType Directory -Path (Join-Path $Dest $d) -Force | Out-Null
@@ -33,6 +33,7 @@ function Put-Template([string]$name, [string]$rel) {
 }
 
 function Put-Playbook([string]$name, [string]$rel) {
+  if ($name -ne "ai-disclosure.md") { $rel = "05-paper\guides\$name" }
   $target = Join-Path $Dest $rel
   if (Test-Path $target) {
     Write-Host "  .  $rel  已存在，跳过"
@@ -43,6 +44,7 @@ function Put-Playbook([string]$name, [string]$rel) {
 }
 
 Put-Template "AGENTS.md"        "AGENTS.md"
+Put-Template "开始使用.md"       "开始使用.md"
 Put-Template "handoff.md"       "handoff.md"
 Put-Template "problem-brief.md" "01-problem\problem-brief.md"
 Put-Template "question-map.md"  "01-problem\question-map.md"
@@ -64,6 +66,25 @@ Put-Playbook "validation-sensitivity.md" "05-paper\validation-sensitivity.md"
 Put-Playbook "model-evaluation.md" "05-paper\model-evaluation.md"
 Put-Template "paper-review.md"    "05-paper\paper-review.md"
 Put-Template "checklist.md"     "06-submission\checklist.md"
+Put-Template "ai-usage.json"    "06-submission\ai-usage.json"
+Put-Template "ai-statement.tex" "05-paper\ai-statement.tex"
+Put-Template "main.tex"         "05-paper\main.tex"
+Put-Template "evidence-map.md"  "05-paper\evidence-map.md"
+Put-Playbook "ai-disclosure.md" "05-paper\ai-disclosure.md"
+
+# 章节写作与证据记录
+Put-Playbook "writing-workflow.md" "05-paper\guides\writing-workflow.md"
+Put-Playbook "problem-restatement.md" "05-paper\guides\problem-restatement.md"
+Put-Playbook "problem-analysis.md" "05-paper\guides\problem-analysis.md"
+Put-Playbook "assumptions.md" "05-paper\guides\assumptions.md"
+Put-Playbook "symbols.md" "05-paper\guides\symbols.md"
+Put-Playbook "references-appendix.md" "05-paper\guides\references-appendix.md"
+Put-Playbook "review-rubric.md" "05-paper\guides\review-rubric.md"
+Put-Template "assumption-register.md" "03-models\assumption-register.md"
+Put-Template "symbol-register.md" "05-paper\symbol-register.md"
+Put-Template "reference-register.md" "05-paper\reference-register.md"
+Put-Template "support-inventory.md" "06-submission\support-inventory.md"
+Put-Template "review-rubric.md" "05-paper\review-rubric.md"
 
 # 绘图代码库（figures/style.py + plots.py）拷入 03-models/code/，幂等
 $FigDir = Join-Path $Root "code-templates\figures"
@@ -81,6 +102,11 @@ if ((Test-Path $TplDir) -and -not (Test-Path $TplTarget)) {
   Write-Host "  +  05-paper\CUMCMThesis  (LaTeX 模板)"
 }
 
+$ClassTarget = Join-Path $Dest "05-paper\cumcmthesis.cls"
+if (-not (Test-Path $ClassTarget)) {
+  Copy-Item (Join-Path $TplDir "cumcmthesis.cls") $ClassTarget
+}
+
 $gitignore = Join-Path $Dest ".gitignore"
 if (-not (Test-Path $gitignore)) {
   @'
@@ -94,6 +120,9 @@ if (-not (Test-Path $gitignore)) {
 05-paper/*.toc
 06-submission/*.zip
 __pycache__/
+03-models/references/bzd/
+05-paper/*.ttf
+05-paper/*.ttc
 '@ | Set-Content -Path $gitignore -Encoding UTF8
   Write-Host "  +  .gitignore"
 }
@@ -101,13 +130,8 @@ __pycache__/
 Write-Host ""
 Write-Host "骨架建好了: $Dest"
 Write-Host ""
-Write-Host '下一步按顺序:'
-Write-Host '  1. 填 AGENTS.md 的 {{占位符}} —— 尤其是赛题、分工和提交规则速记'
-Write-Host '  2. 拆题: 填 01-problem/problem-brief.md 和 question-map.md'
-Write-Host '  3. 数据放 02-data/raw/, 处理留痕写 data-log.md'
-Write-Host '  4. 建模先过 03-models/model-review.md 六维审查, 再进 code/ 写代码'
-Write-Host "  5. 求解环境: powershell $(Join-Path $PSScriptRoot 'setup-env.ps1') $Dest"
-Write-Host '  6. 写论文: 05-paper/ (CUMCMThesis 模板), 摘要最后写'
-Write-Host '  7. 提交前: paper-check 扫一遍 + 06-submission/checklist.md 逐项打勾'
+Write-Host '下一步：打开 开始使用.md，把第一次使用的那段话发给 AI。'
+Write-Host '题面放入 01-problem，原始附件放入 02-data/raw；赛前可留空。'
+Write-Host '写作手册集中在 05-paper/guides，需要时再读。'
 Write-Host ""
 Write-Host '每个窗口结束前更新 handoff.md。'

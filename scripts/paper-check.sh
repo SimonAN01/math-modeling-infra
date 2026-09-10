@@ -15,12 +15,12 @@ say() { echo "[$1] $2"; }
 [ -d "$DEST" ] || { echo "项目目录不存在: $DEST"; exit 1; }
 
 grep_files() { # 排除 .git 与 CUMCMThesis 模板
-  grep -rn --include='*.md' --include='*.tex' "$1" "$DEST" 2>/dev/null | grep -v '/.git/' | grep -v 'CUMCMThesis' || true
+  grep -rnE --include='*.tex' "$1" "$DEST/05-paper" 2>/dev/null | grep -v 'CUMCMThesis' || true
 }
 
 say CHECK "1/4 占位符残留"
-if grep_files '{{' | grep -q .; then
-  grep_files '{{'
+if grep_files '\{\{' | grep -q .; then
+  grep_files '\{\{'
   fail=1
 else
   say PASS "无 {{占位符}} 残留"
@@ -33,7 +33,7 @@ for w in "${words[@]}"; do
   c=$(grep_files "$w" | wc -l)
   if [ "$c" -gt 0 ]; then say WARN "$w × $c"; total=$((total+c)); fi
 done
-if [ "$total" -eq 0 ]; then say PASS "无 AI 套话"; else say INFO "共 $total 处，对照 05-paper/modeling-chapter.md 第十节处理"; fi
+if [ "$total" -eq 0 ]; then say PASS "无 AI 套话"; else say INFO "共 $total 处，对照 05-paper/guides/modeling-chapter.md 第十节处理"; fi
 
 say CHECK "3/4 结果命名"
 if [ -f "$DEST/04-results/results.md" ]; then
@@ -50,12 +50,17 @@ fi
 say CHECK "4/4 模板残留"
 if grep_files 'TODO|FIXME|示例标题|Lorem|待填' | grep -q .; then
   grep_files 'TODO|FIXME|示例标题|Lorem|待填'
-  say WARN "模板残留见上"
+  say FAIL "模板残留见上"
+  fail=1
 else
   say PASS "无 TODO/示例残留"
 fi
 
 echo ""
+say CHECK "AI 披露与编译 PDF"
+AI_ARGS=(check "$DEST")
+if [ -n "${2:-}" ]; then AI_ARGS+=(--paper "$2"); fi
+if ! uv run "$(dirname "${BASH_SOURCE[0]}")/ai-disclosure.py" "${AI_ARGS[@]}"; then fail=1; fi
 if [ "$fail" -eq 1 ]; then say RESULT "存在必须修复的问题（占位符残留 / 禁用命名）。"; exit 1; fi
 say RESULT "无硬伤。软伤提示请人工过一遍，然后走 paper-review 自审与 checklist。"
 exit 0

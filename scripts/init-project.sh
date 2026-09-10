@@ -9,11 +9,13 @@
 set -euo pipefail
 
 DEST="${1:?用法: init-project.sh <项目目录>}"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TPL="$(cd "$(dirname "${BASH_SOURCE[0]}")/../assets/templates" && pwd)"
 PLB="$(cd "$(dirname "${BASH_SOURCE[0]}")/../assets/playbooks" && pwd)"
 
-mkdir -p "$DEST"/{01-problem,02-data/{raw,processed},03-models/code,04-results/figures,05-paper,06-submission}
+mkdir -p "$DEST"/{01-problem,02-data/{raw,processed},03-models/code,04-results/figures,05-paper/guides,06-submission}
 cd "$DEST"
+DEST="$(pwd)"
 
 put() { # $1=模板名 $2=目标路径
   if [ -e "$2" ]; then
@@ -25,6 +27,7 @@ put() { # $1=模板名 $2=目标路径
 }
 
 putp() { # 从 playbooks 拷入（论文写作手册）
+  if [ "$1" != "ai-disclosure.md" ]; then set -- "$1" "05-paper/guides/$1"; fi
   if [ -e "$2" ]; then
     echo "  ·  $2  已存在，跳过"
   else
@@ -34,6 +37,7 @@ putp() { # 从 playbooks 拷入（论文写作手册）
 }
 
 put AGENTS.md          AGENTS.md
+put 开始使用.md        开始使用.md
 put handoff.md         handoff.md
 put problem-brief.md   01-problem/problem-brief.md
 put question-map.md    01-problem/question-map.md
@@ -55,19 +59,42 @@ putp validation-sensitivity.md 05-paper/validation-sensitivity.md
 putp model-evaluation.md 05-paper/model-evaluation.md
 put paper-review.md    05-paper/paper-review.md
 put checklist.md       06-submission/checklist.md
+put ai-usage.json      06-submission/ai-usage.json
+put ai-statement.tex   05-paper/ai-statement.tex
+put main.tex           05-paper/main.tex
+put evidence-map.md    05-paper/evidence-map.md
+putp ai-disclosure.md  05-paper/ai-disclosure.md
+
+# 章节写作与证据记录
+putp writing-workflow.md 05-paper/guides/writing-workflow.md
+putp problem-restatement.md 05-paper/guides/problem-restatement.md
+putp problem-analysis.md 05-paper/guides/problem-analysis.md
+putp assumptions.md 05-paper/guides/assumptions.md
+putp symbols.md 05-paper/guides/symbols.md
+putp references-appendix.md 05-paper/guides/references-appendix.md
+putp review-rubric.md 05-paper/guides/review-rubric.md
+put assumption-register.md 03-models/assumption-register.md
+put symbol-register.md 05-paper/symbol-register.md
+put reference-register.md 05-paper/reference-register.md
+put support-inventory.md 06-submission/support-inventory.md
+put review-rubric.md 05-paper/review-rubric.md
 
 # 绘图代码库（figures/style.py + plots.py）拷入 03-models/code/，幂等
-FIG_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../code-templates/figures" 2>/dev/null && pwd)"
+FIG_DIR="$SCRIPT_DIR/../code-templates/figures"
 if [ -d "$FIG_DIR" ] && [ ! -d "$DEST/03-models/code/figures" ]; then
   cp -r "$FIG_DIR" "$DEST/03-models/code/"
   echo "  +  03-models/code/figures  (绘图代码库)"
 fi
 
 # CUMCMThesis 模板（不含微软字体）自动拷入 05-paper/，幂等
-TPL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../templates/CUMCMThesis" && pwd)"
+TPL_DIR="$SCRIPT_DIR/../templates/CUMCMThesis"
 if [ -d "$TPL_DIR" ] && [ ! -d "$DEST/05-paper/CUMCMThesis" ]; then
   cp -r "$TPL_DIR" "$DEST/05-paper/"
   echo "  +  05-paper/CUMCMThesis  (LaTeX 模板)"
+fi
+
+if [ ! -e "$DEST/05-paper/cumcmthesis.cls" ]; then
+  cp "$TPL_DIR/cumcmthesis.cls" "$DEST/05-paper/cumcmthesis.cls"
 fi
 
 if [ ! -e .gitignore ]; then
@@ -82,31 +109,17 @@ if [ ! -e .gitignore ]; then
 05-paper/*.toc
 06-submission/*.zip
 __pycache__/
+03-models/references/bzd/
+05-paper/*.ttf
+05-paper/*.ttc
 EOF
   echo "  +  .gitignore"
 fi
 
 cat <<EOF
 
-骨架建好了：$(pwd)
-
-下一步按顺序：
-
-  1. 填 AGENTS.md 的 {{占位符}} —— 尤其是赛题、分工和提交规则速记
-
-  2. 拆题：填 01-problem/problem-brief.md 和 question-map.md，
-     先判题型（预测 / 评价 / 优化 / 组合）
-
-  3. 数据放 02-data/raw/，处理留痕写 data-log.md，原始数据不覆盖
-
-  4. 建模先过 03-models/model-review.md 六维审查，全过再进 code/ 写代码
-
-  5. 求解环境：
-       bash $(dirname "${BASH_SOURCE[0]}")/setup-env.sh $(pwd)
-
-  6. 写论文：05-paper/（CUMCMThesis 模板，XeLaTeX），摘要最后写
-
-  7. 提交前：06-submission/checklist.md 逐项打勾，三方数字对账
-
-每个窗口结束前更新 handoff.md。
+骨架建好了：$DEST
+下一步：打开 开始使用.md，把第一次使用的那段话发给 AI。
+题面放入 01-problem，附件放入 02-data/raw；赛前可留空。
+写作手册集中在 05-paper/guides，需要时再读。
 EOF

@@ -45,7 +45,9 @@ foreach ($f in @("simsun.ttc", "simkai.ttf")) {
 Push-Location $PaperDir
 try {
   xelatex -interaction=nonstopmode -halt-on-error $Entry | Out-Null
+  if ($LASTEXITCODE -ne 0) { throw "XeLaTeX 首轮编译失败，请检查日志；已有 PDF 不代表本轮成功。" }
   xelatex -interaction=nonstopmode -halt-on-error $Entry | Out-Null
+  if ($LASTEXITCODE -ne 0) { throw "XeLaTeX 第二轮编译失败，请检查日志。" }
 } finally {
   Pop-Location
 }

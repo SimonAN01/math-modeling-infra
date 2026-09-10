@@ -6,7 +6,7 @@
 # 退出码：0 = 无硬伤；1 = 存在必须修复的问题（占位符残留、禁用命名）。
 # 软伤（AI 套话 / 模板残留）只提示不拦截，对照 playbooks/modeling-chapter.md 第十节人工处理。
 
-param([Parameter(Mandatory=$true)][string]$Dest)
+param([Parameter(Mandatory=$true)][string]$Dest, [string]$PaperPdf)
 
 $ErrorActionPreference = "Stop"
 $fail = $false
@@ -15,8 +15,8 @@ function Say([string]$tag, [string]$msg) { Write-Host "[$tag] $msg" }
 
 if (-not (Test-Path $Dest)) { Write-Host "项目目录不存在: $Dest"; exit 1 }
 
-$scanFiles = Get-ChildItem $Dest -Recurse -Include *.md,*.tex -File |
-  Where-Object { $_.FullName -notmatch '\\\.git\\|CUMCMThesis' }
+$scanFiles = Get-ChildItem (Join-Path $Dest "05-paper") -Recurse -Filter *.tex -File |
+  Where-Object { $_.FullName -notmatch '\\CUMCMThesis\\' }
 
 # ---- 1. {{占位符}} 残留（硬伤） ----
 Say "CHECK" "1/4 占位符残留"
@@ -40,7 +40,7 @@ foreach ($w in $words) {
   if ($count -gt 0) { Say "WARN" ("{0} × {1}" -f $w, $count); $total += $count }
 }
 if ($total -eq 0) { Say "PASS" "无 AI 套话" }
-else { Say "INFO" ("共 {0} 处，对照 05-paper/modeling-chapter.md 第十节逐条处理" -f $total) }
+else { Say "INFO" ("共 {0} 处，对照 05-paper/guides/modeling-chapter.md 第十节逐条处理" -f $total) }
 
 # ---- 3. 结果命名检查（硬伤） ----
 Say "CHECK" "3/4 结果命名"
@@ -53,15 +53,25 @@ if (Test-Path $resFile) {
   } else { Say "PASS" "results.md 无 test/final/new 命名" }
 } else { Say "WARN" "未找到 04-results/results.md（还没跑结果？）" }
 
-# ---- 4. 模板残留（软伤） ----
+# ---- 4. 模板残留（硬伤，仅检查论文 TeX） ----
 Say "CHECK" "4/4 模板残留"
 $bad2 = $scanFiles | Select-String -Pattern 'TODO|FIXME|示例标题|Lorem|待填' -List
 if ($bad2) {
-  foreach ($b in $bad2) { Say "WARN" ("模板残留: " + $b.Path.Replace($Dest, ".") + ":" + $b.LineNumber) }
+  $fail = $true
+  foreach ($b in $bad2) { Say "FAIL" ("模板残留: " + $b.Path.Replace($Dest, ".") + ":" + $b.LineNumber) }
 } else { Say "PASS" "无 TODO/示例残留" }
 
 # ---- 汇总 ----
+Say "CHECK" "AI 披露与编译 PDF"
+if (-not (Get-Command uv -ErrorAction SilentlyContinue)) {
+  Say "FAIL" "需要 uv 运行 AI 披露检查"; $fail = $true
+} else {
+  $aiArgs = @("run", (Join-Path $PSScriptRoot "ai-disclosure.py"), "check", $Dest)
+  if ($PaperPdf) { $aiArgs += @("--paper", $PaperPdf) }
+  & uv @aiArgs
+  if ($LASTEXITCODE -ne 0) { $fail = $true }
+}
 Write-Host ""
-if ($fail) { Say "RESULT" "存在必须修复的问题（占位符残留 / 禁用命名）。"; exit 1 }
+if ($fail) { Say "RESULT" "存在必须修复的问题，见上方 FAIL。"; exit 1 }
 Say "RESULT" "无硬伤。软伤提示请人工过一遍，然后走 paper-review 自审与 checklist。"
 exit 0
