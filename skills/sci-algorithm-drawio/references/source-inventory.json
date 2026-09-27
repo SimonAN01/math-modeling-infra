@@ -1,0 +1,3084 @@
+{
+  "source_name": "user-reference.drawio",
+  "sha256": "77f2ddf49d596a039f09e4bd592b2dd0f331b873eadaaf03c51f1e00ac7497c7",
+  "page_count": 1,
+  "pages": [
+    {
+      "name": "第 1 页",
+      "cells": 134,
+      "vertices": 103,
+      "edges": 29,
+      "images": 9,
+      "non_image_vertices": 94,
+      "parent_counts": {
+        "(none)": 1,
+        "0": 1,
+        "1": 132
+      },
+      "explicit_colors": {
+        "fillColor:none": 2,
+        "fillColor:#E6E6E6": 4,
+        "strokeColor:#000000": 4
+      },
+      "explicit_font_sizes": {
+        "21": 40,
+        "23": 6,
+        "22": 1,
+        "18": 10,
+        "20": 2,
+        "19": 15,
+        "16": 1
+      },
+      "shapes": {
+        "default": 118,
+        "mxgraph.arrows2.arrow": 7,
+        "image": 9
+      },
+      "records": [
+        {
+          "id": "0",
+          "label": "",
+          "geometry": null,
+          "style": {}
+        },
+        {
+          "id": "1",
+          "parent": "0",
+          "label": "",
+          "geometry": null,
+          "style": {}
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-208",
+          "parent": "1",
+          "vertex": "1",
+          "label": "",
+          "geometry": {
+            "height": "469",
+            "width": "1621",
+            "x": "1354",
+            "y": "220",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "strokeWidth": "1"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-207",
+          "parent": "1",
+          "source": "mFdmstkuWRQXA2u8hkEb-113",
+          "target": "mFdmstkuWRQXA2u8hkEb-109",
+          "edge": "1",
+          "label": "",
+          "geometry": {
+            "relative": "1",
+            "as": "geometry"
+          },
+          "style": {
+            "edgeStyle": "orthogonalEdgeStyle",
+            "rounded": "0",
+            "orthogonalLoop": "1",
+            "jettySize": "auto",
+            "html": "1",
+            "entryX": "0",
+            "entryY": "0.5",
+            "entryDx": "0",
+            "entryDy": "0",
+            "fontSize": "21",
+            "strokeWidth": "2"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-113",
+          "parent": "1",
+          "vertex": "1",
+          "label": "跨模态重建与门控时序融合层",
+          "geometry": {
+            "height": "375.03",
+            "width": "382",
+            "x": "2110",
+            "y": "309.62",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "23",
+            "strokeWidth": "1",
+            "spacingTop": "-307",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-114",
+          "parent": "1",
+          "vertex": "1",
+          "label": "Softmax权重分配",
+          "geometry": {
+            "height": "94.87",
+            "width": "356",
+            "x": "2380",
+            "y": "-42.49000000000001",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "2",
+            "spacingTop": "-26"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-108",
+          "parent": "1",
+          "vertex": "1",
+          "label": "单模态支路层",
+          "geometry": {
+            "height": "375.03",
+            "width": "400",
+            "x": "1690",
+            "y": "309.62",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "23",
+            "spacingTop": "-329",
+            "spacing": "0",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-80",
+          "parent": "1",
+          "vertex": "1",
+          "label": "预处理输入",
+          "geometry": {
+            "height": "375.03",
+            "width": "327",
+            "x": "1354",
+            "y": "310",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "23",
+            "spacingTop": "-329",
+            "spacing": "0",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-71",
+          "parent": "1",
+          "vertex": "1",
+          "label": "",
+          "geometry": {
+            "height": "254.75",
+            "width": "780",
+            "x": "130",
+            "y": "910",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-70",
+          "parent": "1",
+          "vertex": "1",
+          "label": "",
+          "geometry": {
+            "height": "260.37",
+            "width": "650",
+            "x": "130",
+            "y": "454.5",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-69",
+          "parent": "1",
+          "vertex": "1",
+          "label": "",
+          "geometry": {
+            "height": "254.75",
+            "width": "740",
+            "x": "130",
+            "y": "80.25",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontFamily": "Times New Roman",
+            "strokeWidth": "1"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-5",
+          "parent": "1",
+          "vertex": "1",
+          "label": "嵌入预处理",
+          "geometry": {
+            "height": "234.75",
+            "width": "180",
+            "x": "140",
+            "y": "90",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "22",
+            "spacingTop": "-199",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-13",
+          "parent": "1",
+          "source": "mFdmstkuWRQXA2u8hkEb-1",
+          "target": "mFdmstkuWRQXA2u8hkEb-8",
+          "edge": "1",
+          "label": "",
+          "geometry": {
+            "relative": "1",
+            "as": "geometry"
+          },
+          "style": {
+            "edgeStyle": "orthogonalEdgeStyle",
+            "rounded": "0",
+            "orthogonalLoop": "1",
+            "jettySize": "auto",
+            "html": "1",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-1",
+          "parent": "1",
+          "vertex": "1",
+          "label": "英文转写文本原始内容 字符顺序",
+          "geometry": {
+            "height": "80",
+            "width": "164",
+            "x": "148",
+            "y": "130",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "18",
+            "strokeWidth": "1",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-8",
+          "parent": "1",
+          "vertex": "1",
+          "label": "词元化WorldPiece分词",
+          "geometry": {
+            "height": "80",
+            "width": "164",
+            "x": "148",
+            "y": "230",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "1",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-15",
+          "parent": "1",
+          "vertex": "1",
+          "label": "",
+          "geometry": {
+            "height": "80",
+            "width": "30",
+            "x": "320",
+            "y": "167.38",
+            "as": "geometry"
+          },
+          "style": {
+            "html": "1",
+            "shadow": "0",
+            "dashed": "0",
+            "align": "center",
+            "verticalAlign": "middle",
+            "shape": "mxgraph.arrows2.arrow",
+            "dy": "0.55",
+            "dx": "19.18",
+            "notch": "0",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-16",
+          "parent": "1",
+          "vertex": "1",
+          "label": "Bert编码块",
+          "geometry": {
+            "height": "234.75",
+            "width": "306.6",
+            "x": "350",
+            "y": "90",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "23",
+            "spacingTop": "-199",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-4",
+          "parent": "1",
+          "vertex": "1",
+          "label": "",
+          "geometry": {
+            "height": "191.75",
+            "width": "300.06",
+            "x": "351.54",
+            "y": "130",
+            "as": "geometry"
+          },
+          "style": {
+            "shape": "image",
+            "verticalLabelPosition": "bottom",
+            "labelBackgroundColor": "default",
+            "verticalAlign": "top",
+            "aspect": "fixed",
+            "imageAspect": "0",
+            "clipPath": "inset(24.34% 3.19% 24.11% 50%)",
+            "fontFamily": "Times New Roman"
+          },
+          "image": {
+            "embedded": true,
+            "data_uri_length": 365543,
+            "content_omitted": true
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-18",
+          "parent": "1",
+          "vertex": "1",
+          "label": "文本特征序列",
+          "geometry": {
+            "height": "234.75",
+            "width": "172.8",
+            "x": "686",
+            "y": "90",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "23",
+            "spacingTop": "-199",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-20",
+          "parent": "1",
+          "vertex": "1",
+          "label": "",
+          "geometry": {
+            "height": "191.75",
+            "width": "156.56",
+            "x": "699.59",
+            "y": "130.97",
+            "as": "geometry"
+          },
+          "style": {
+            "shape": "image",
+            "verticalLabelPosition": "bottom",
+            "labelBackgroundColor": "default",
+            "verticalAlign": "top",
+            "aspect": "fixed",
+            "imageAspect": "0",
+            "clipPath": "inset(2.25% 0% 6.83% 15%)",
+            "fontFamily": "Times New Roman"
+          },
+          "image": {
+            "embedded": true,
+            "data_uri_length": 564887,
+            "content_omitted": true
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-21",
+          "parent": "1",
+          "vertex": "1",
+          "label": "原始音轨",
+          "geometry": {
+            "height": "244.75",
+            "width": "200",
+            "x": "138",
+            "y": "460",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "spacingTop": "-210",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-29",
+          "parent": "1",
+          "vertex": "1",
+          "label": "场景声音",
+          "geometry": {
+            "height": "59.26",
+            "width": "188",
+            "x": "142",
+            "y": "495.8",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "20",
+            "spacingTop": "0",
+            "spacing": "-1",
+            "spacingLeft": "-106",
+            "fontFamily": "Times New Roman",
+            "fontStyle": "0",
+            "dashed": "1",
+            "dashPattern": "8 8"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-30",
+          "parent": "1",
+          "vertex": "1",
+          "label": "",
+          "geometry": {
+            "height": "43.31",
+            "width": "79.75",
+            "x": "230.25",
+            "y": "500.89",
+            "as": "geometry"
+          },
+          "style": {
+            "shape": "image",
+            "verticalLabelPosition": "bottom",
+            "labelBackgroundColor": "default",
+            "verticalAlign": "top",
+            "aspect": "fixed",
+            "imageAspect": "0",
+            "fontFamily": "Times New Roman"
+          },
+          "image": {
+            "embedded": true,
+            "data_uri_length": 448424,
+            "content_omitted": true
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-31",
+          "parent": "1",
+          "vertex": "1",
+          "label": "语音\n信息",
+          "geometry": {
+            "height": "117.74",
+            "width": "188",
+            "x": "142",
+            "y": "579",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "20",
+            "spacingTop": "-41",
+            "spacing": "-1",
+            "spacingLeft": "-102",
+            "fontFamily": "Times New Roman",
+            "fontStyle": "0",
+            "dashed": "1",
+            "dashPattern": "8 8"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-34",
+          "parent": "1",
+          "vertex": "1",
+          "label": "",
+          "geometry": {
+            "height": "59.26",
+            "width": "70.13",
+            "x": "235.87",
+            "y": "587.91",
+            "as": "geometry"
+          },
+          "style": {
+            "shape": "image",
+            "verticalLabelPosition": "bottom",
+            "labelBackgroundColor": "default",
+            "verticalAlign": "top",
+            "aspect": "fixed",
+            "imageAspect": "0",
+            "fontFamily": "Times New Roman"
+          },
+          "image": {
+            "embedded": true,
+            "data_uri_length": 323172,
+            "content_omitted": true
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-38",
+          "parent": "1",
+          "vertex": "1",
+          "label": "OpenSmile处理",
+          "geometry": {
+            "height": "244.75",
+            "width": "172.8",
+            "x": "368",
+            "y": "462",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "spacingTop": "-214",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-39",
+          "parent": "1",
+          "source": "mFdmstkuWRQXA2u8hkEb-40",
+          "target": "mFdmstkuWRQXA2u8hkEb-41",
+          "edge": "1",
+          "label": "",
+          "geometry": {
+            "relative": "1",
+            "as": "geometry"
+          },
+          "style": {
+            "edgeStyle": "orthogonalEdgeStyle",
+            "rounded": "0",
+            "orthogonalLoop": "1",
+            "jettySize": "auto",
+            "html": "1",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-40",
+          "parent": "1",
+          "vertex": "1",
+          "label": "连续分析时间窗",
+          "geometry": {
+            "height": "40.58",
+            "width": "156.56",
+            "x": "374",
+            "y": "495.8",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "19",
+            "strokeWidth": "1",
+            "spacingTop": "20",
+            "fontFamily": "Times New Roman",
+            "dashed": "1",
+            "dashPattern": "8 8"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-41",
+          "parent": "1",
+          "vertex": "1",
+          "label": "eGeMAPS体系",
+          "geometry": {
+            "height": "141.19",
+            "width": "156.56",
+            "x": "374",
+            "y": "554",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "1",
+            "spacingTop": "-75",
+            "fontFamily": "Times New Roman",
+            "dashed": "1",
+            "dashPattern": "8 8"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-42",
+          "parent": "1",
+          "vertex": "1",
+          "label": "音高响度",
+          "geometry": {
+            "height": "43.31",
+            "width": "56",
+            "x": "386",
+            "y": "594.91",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "18",
+            "strokeWidth": "2",
+            "spacingTop": "2",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-43",
+          "parent": "1",
+          "vertex": "1",
+          "label": "频谱倒谱",
+          "geometry": {
+            "height": "43.31",
+            "width": "56",
+            "x": "464",
+            "y": "594.91",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "18",
+            "strokeWidth": "2",
+            "spacingTop": "2",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-44",
+          "parent": "1",
+          "vertex": "1",
+          "label": "发音质量",
+          "geometry": {
+            "height": "43.31",
+            "width": "56",
+            "x": "386",
+            "y": "645.69",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "18",
+            "strokeWidth": "2",
+            "spacingTop": "2",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-45",
+          "parent": "1",
+          "vertex": "1",
+          "label": "共振峰",
+          "geometry": {
+            "height": "43.31",
+            "width": "56",
+            "x": "464",
+            "y": "645.69",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "18",
+            "strokeWidth": "2",
+            "spacingTop": "2",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-47",
+          "parent": "1",
+          "vertex": "1",
+          "label": "语音特征序列",
+          "geometry": {
+            "height": "244.75",
+            "width": "200",
+            "x": "570.8",
+            "y": "461",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "spacingTop": "-212",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-48",
+          "parent": "1",
+          "vertex": "1",
+          "label": "",
+          "geometry": {
+            "height": "204.75",
+            "width": "172.79580152671755",
+            "x": "587.4",
+            "y": "492.99000000000007",
+            "as": "geometry"
+          },
+          "style": {
+            "shape": "image",
+            "verticalLabelPosition": "bottom",
+            "labelBackgroundColor": "default",
+            "verticalAlign": "top",
+            "aspect": "fixed",
+            "imageAspect": "0",
+            "clipPath": "inset(0% 5.17% 0% 20.24%)",
+            "fontFamily": "Times New Roman"
+          },
+          "image": {
+            "embedded": true,
+            "data_uri_length": 1140847,
+            "content_omitted": true
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-49",
+          "parent": "1",
+          "vertex": "1",
+          "label": "干扰语音",
+          "geometry": {
+            "height": "40.58",
+            "width": "86.13",
+            "x": "238.87",
+            "y": "647.17",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "19",
+            "strokeWidth": "1",
+            "spacingTop": "2",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-50",
+          "parent": "1",
+          "vertex": "1",
+          "label": "有效语音",
+          "geometry": {
+            "height": "40.58",
+            "width": "79.75",
+            "x": "150",
+            "y": "647.17",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "19",
+            "strokeWidth": "1",
+            "spacingTop": "2",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-52",
+          "parent": "1",
+          "vertex": "1",
+          "label": "原始视频帧",
+          "geometry": {
+            "height": "234.75",
+            "width": "260",
+            "x": "138",
+            "y": "920.75",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "spacingTop": "-200",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-53",
+          "parent": "1",
+          "vertex": "1",
+          "label": "",
+          "geometry": {
+            "height": "135.15",
+            "width": "241",
+            "x": "149.8",
+            "y": "1007.75",
+            "as": "geometry"
+          },
+          "style": {
+            "shape": "image",
+            "verticalLabelPosition": "bottom",
+            "labelBackgroundColor": "default",
+            "verticalAlign": "top",
+            "aspect": "fixed",
+            "imageAspect": "0",
+            "fontFamily": "Times New Roman"
+          },
+          "image": {
+            "embedded": true,
+            "data_uri_length": 497836,
+            "content_omitted": true
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-54",
+          "parent": "1",
+          "vertex": "1",
+          "label": "帧号时间戳",
+          "geometry": {
+            "height": "40.58",
+            "width": "120",
+            "x": "265.8",
+            "y": "956.02",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "18",
+            "strokeWidth": "1",
+            "spacingTop": "2",
+            "fontStyle": "0",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-56",
+          "parent": "1",
+          "source": "mFdmstkuWRQXA2u8hkEb-55",
+          "target": "mFdmstkuWRQXA2u8hkEb-54",
+          "edge": "1",
+          "label": "",
+          "geometry": {
+            "relative": "1",
+            "as": "geometry"
+          },
+          "style": {
+            "edgeStyle": "orthogonalEdgeStyle",
+            "rounded": "0",
+            "orthogonalLoop": "1",
+            "jettySize": "auto",
+            "html": "1",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-55",
+          "parent": "1",
+          "vertex": "1",
+          "label": "视频编号",
+          "geometry": {
+            "height": "40.58",
+            "width": "86.13",
+            "x": "155.8",
+            "y": "956.02",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "18",
+            "strokeWidth": "1",
+            "spacingTop": "2",
+            "fontStyle": "0",
+            "fontFamily": "Times New Roman",
+            "fillColor": "none"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-58",
+          "parent": "1",
+          "vertex": "1",
+          "label": "OpenFace面部定位",
+          "geometry": {
+            "height": "234.75",
+            "width": "270",
+            "x": "429.6",
+            "y": "920.75",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "spacingTop": "-200",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-59",
+          "parent": "1",
+          "vertex": "1",
+          "label": "视觉特征序列",
+          "geometry": {
+            "height": "234.75",
+            "width": "172.8",
+            "x": "729.6",
+            "y": "920.75",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "spacingTop": "-200",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-62",
+          "parent": "1",
+          "vertex": "1",
+          "label": "视线方向",
+          "geometry": {
+            "height": "43.31",
+            "width": "56",
+            "x": "538.6",
+            "y": "956.02",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "18",
+            "strokeWidth": "1",
+            "spacingTop": "2",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-63",
+          "parent": "1",
+          "vertex": "1",
+          "label": "头部姿态",
+          "geometry": {
+            "height": "43.31",
+            "width": "56",
+            "x": "462.6",
+            "y": "956.02",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "18",
+            "strokeWidth": "1",
+            "spacingTop": "2",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-64",
+          "parent": "1",
+          "vertex": "1",
+          "label": "动作单元",
+          "geometry": {
+            "height": "43.31",
+            "width": "56",
+            "x": "614.6",
+            "y": "956.02",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "18",
+            "strokeWidth": "1",
+            "spacingTop": "2",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-65",
+          "parent": "1",
+          "vertex": "1",
+          "label": "",
+          "geometry": {
+            "height": "135.64",
+            "width": "241",
+            "x": "445.6",
+            "y": "1008.75",
+            "as": "geometry"
+          },
+          "style": {
+            "shape": "image",
+            "verticalLabelPosition": "bottom",
+            "labelBackgroundColor": "default",
+            "verticalAlign": "top",
+            "aspect": "fixed",
+            "imageAspect": "0",
+            "fontFamily": "Times New Roman"
+          },
+          "image": {
+            "embedded": true,
+            "data_uri_length": 1994051,
+            "content_omitted": true
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-67",
+          "parent": "1",
+          "vertex": "1",
+          "label": "",
+          "geometry": {
+            "height": "191.75",
+            "width": "146.87",
+            "x": "750.6",
+            "y": "956.57",
+            "as": "geometry"
+          },
+          "style": {
+            "shape": "image",
+            "verticalLabelPosition": "bottom",
+            "labelBackgroundColor": "default",
+            "verticalAlign": "top",
+            "aspect": "fixed",
+            "imageAspect": "0",
+            "fontFamily": "Times New Roman"
+          },
+          "image": {
+            "embedded": true,
+            "data_uri_length": 495188,
+            "content_omitted": true
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-73",
+          "parent": "1",
+          "vertex": "1",
+          "label": "",
+          "geometry": {
+            "height": "327.74",
+            "width": "156.56",
+            "x": "1365.72",
+            "y": "352.22",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "1",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "dashed": "1",
+            "dashPattern": "8 8",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-75",
+          "parent": "1",
+          "vertex": "1",
+          "label": "",
+          "geometry": {
+            "height": "210.69",
+            "width": "194.61",
+            "x": "2090",
+            "y": "-45.34",
+            "as": "geometry"
+          },
+          "style": {
+            "shape": "image",
+            "verticalLabelPosition": "bottom",
+            "labelBackgroundColor": "default",
+            "verticalAlign": "top",
+            "aspect": "fixed",
+            "imageAspect": "0"
+          },
+          "image": {
+            "embedded": true,
+            "data_uri_length": 27367,
+            "content_omitted": true
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-77",
+          "parent": "1",
+          "vertex": "1",
+          "label": "文本特征50x768",
+          "geometry": {
+            "height": "60",
+            "width": "120",
+            "x": "1384",
+            "y": "439.87",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "2",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-78",
+          "parent": "1",
+          "vertex": "1",
+          "label": "语音特征50x74",
+          "geometry": {
+            "height": "60",
+            "width": "120",
+            "x": "1384",
+            "y": "524.87",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "2",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-79",
+          "parent": "1",
+          "vertex": "1",
+          "label": "视觉特征50x35",
+          "geometry": {
+            "height": "60",
+            "width": "120",
+            "x": "1384",
+            "y": "604.78",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "2",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-81",
+          "parent": "1",
+          "vertex": "1",
+          "label": "三模态掩码\n50x3",
+          "geometry": {
+            "height": "60",
+            "width": "120",
+            "x": "1384",
+            "y": "370",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "2",
+            "opacity": "0",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-91",
+          "parent": "1",
+          "vertex": "1",
+          "label": "",
+          "geometry": {
+            "height": "327.74",
+            "width": "140",
+            "x": "1530",
+            "y": "352.22",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "1",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "dashed": "1",
+            "dashPattern": "8 8",
+            "labelBackgroundColor": "none",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-86",
+          "parent": "1",
+          "vertex": "1",
+          "label": "musk保留结构位",
+          "geometry": {
+            "height": "60",
+            "width": "120",
+            "x": "1540",
+            "y": "439.87",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "2",
+            "spacingTop": "20",
+            "fontStyle": "0",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-87",
+          "parent": "1",
+          "vertex": "1",
+          "label": "绝对值全部 ≤1e-8",
+          "geometry": {
+            "height": "60",
+            "width": "120",
+            "x": "1540",
+            "y": "524.91",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "2",
+            "fontStyle": "0",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-88",
+          "parent": "1",
+          "vertex": "1",
+          "label": "绝对值全部 ≤1e-8",
+          "geometry": {
+            "height": "60",
+            "width": "120",
+            "x": "1540",
+            "y": "604.38",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "2",
+            "fontStyle": "0",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-92",
+          "parent": "1",
+          "vertex": "1",
+          "label": "缺失判断",
+          "geometry": {
+            "height": "60",
+            "width": "120",
+            "x": "1541",
+            "y": "372.87",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "2",
+            "opacity": "0",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-96",
+          "parent": "1",
+          "vertex": "1",
+          "label": "Transformer编码器\n四头Attention",
+          "geometry": {
+            "height": "69.87",
+            "width": "200",
+            "x": "1681",
+            "y": "-19.999999999999886",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "2",
+            "spacingTop": "-1",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-100",
+          "parent": "1",
+          "source": "mFdmstkuWRQXA2u8hkEb-77",
+          "target": "mFdmstkuWRQXA2u8hkEb-86",
+          "edge": "1",
+          "label": "",
+          "geometry": {
+            "height": "50",
+            "relative": "1",
+            "width": "50",
+            "as": "geometry"
+          },
+          "style": {
+            "endArrow": "classic",
+            "html": "1",
+            "rounded": "0",
+            "exitX": "1.003",
+            "exitY": "0.556",
+            "exitDx": "0",
+            "exitDy": "0",
+            "exitPerimeter": "0",
+            "entryX": "-0.004",
+            "entryY": "0.551",
+            "entryDx": "0",
+            "entryDy": "0",
+            "entryPerimeter": "0",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-101",
+          "parent": "1",
+          "source": "mFdmstkuWRQXA2u8hkEb-78",
+          "target": "mFdmstkuWRQXA2u8hkEb-87",
+          "edge": "1",
+          "label": "",
+          "geometry": {
+            "height": "50",
+            "relative": "1",
+            "width": "50",
+            "as": "geometry"
+          },
+          "style": {
+            "endArrow": "classic",
+            "html": "1",
+            "rounded": "0",
+            "exitX": "1",
+            "exitY": "0.5",
+            "exitDx": "0",
+            "exitDy": "0",
+            "entryX": "0",
+            "entryY": "0.5",
+            "entryDx": "0",
+            "entryDy": "0",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-102",
+          "parent": "1",
+          "source": "mFdmstkuWRQXA2u8hkEb-79",
+          "target": "mFdmstkuWRQXA2u8hkEb-88",
+          "edge": "1",
+          "label": "",
+          "geometry": {
+            "height": "50",
+            "relative": "1",
+            "width": "50",
+            "as": "geometry"
+          },
+          "style": {
+            "endArrow": "classic",
+            "html": "1",
+            "rounded": "0",
+            "exitX": "1",
+            "exitY": "0.5",
+            "exitDx": "0",
+            "exitDy": "0",
+            "entryX": "0",
+            "entryY": "0.5",
+            "entryDx": "0",
+            "entryDy": "0",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-107",
+          "parent": "1",
+          "vertex": "1",
+          "label": "线性投影\nLinear(d→64) + LayerNorm + GELU",
+          "geometry": {
+            "height": "80",
+            "width": "200",
+            "x": "1440",
+            "y": "-42.25999999999999",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "2",
+            "spacingTop": "-1",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-109",
+          "parent": "1",
+          "vertex": "1",
+          "label": "双任务输出层",
+          "geometry": {
+            "height": "375.03",
+            "width": "466",
+            "x": "2509",
+            "y": "309.62",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "23",
+            "spacingTop": "-329",
+            "spacing": "0",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-110",
+          "parent": "1",
+          "vertex": "1",
+          "label": "隐状态",
+          "geometry": {
+            "height": "40.58",
+            "width": "90",
+            "x": "2390",
+            "y": "-2.840000000000032",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "2",
+            "spacingTop": "6",
+            "fontStyle": "0"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-111",
+          "parent": "1",
+          "vertex": "1",
+          "label": "观测标志",
+          "geometry": {
+            "height": "40.58",
+            "width": "97",
+            "x": "2492",
+            "y": "-2.840000000000032",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "2",
+            "spacingTop": "6",
+            "fontStyle": "0"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-112",
+          "parent": "1",
+          "vertex": "1",
+          "label": "模态可见比例",
+          "geometry": {
+            "height": "40.58",
+            "width": "130",
+            "x": "2600",
+            "y": "-2.840000000000032",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "2",
+            "spacingTop": "6",
+            "fontStyle": "0"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-115",
+          "parent": "1",
+          "vertex": "1",
+          "label": "门控合并层（259维）",
+          "geometry": {
+            "height": "103.99",
+            "width": "356",
+            "x": "2121",
+            "y": "355.87000000000006",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "1",
+            "spacingTop": "-41",
+            "fontFamily": "Times New Roman",
+            "dashed": "1",
+            "dashPattern": "8 8"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-116",
+          "parent": "1",
+          "vertex": "1",
+          "label": "隐表示",
+          "geometry": {
+            "height": "60",
+            "width": "90",
+            "x": "2272",
+            "y": "388.95",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "2",
+            "spacingTop": "6",
+            "fontStyle": "0",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-117",
+          "parent": "1",
+          "vertex": "1",
+          "label": "观测标志",
+          "geometry": {
+            "height": "60",
+            "width": "97",
+            "x": "2374",
+            "y": "388.95",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "2",
+            "spacingTop": "6",
+            "fontStyle": "0",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-118",
+          "parent": "1",
+          "vertex": "1",
+          "label": "Softmax加权合",
+          "geometry": {
+            "height": "60",
+            "width": "130",
+            "x": "2131",
+            "y": "388.19",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "2",
+            "spacingTop": "2",
+            "fontStyle": "0",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-175",
+          "parent": "1",
+          "source": "mFdmstkuWRQXA2u8hkEb-120",
+          "target": "mFdmstkuWRQXA2u8hkEb-121",
+          "edge": "1",
+          "label": "",
+          "geometry": {
+            "relative": "1",
+            "as": "geometry"
+          },
+          "style": {
+            "edgeStyle": "orthogonalEdgeStyle",
+            "rounded": "0",
+            "orthogonalLoop": "1",
+            "jettySize": "auto",
+            "html": "1"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-120",
+          "parent": "1",
+          "vertex": "1",
+          "label": "Transformer编码器\n单层四头Attention",
+          "geometry": {
+            "height": "60",
+            "width": "327",
+            "x": "2137",
+            "y": "527.5500000000001",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "19",
+            "strokeWidth": "2",
+            "spacingTop": "-1",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-121",
+          "parent": "1",
+          "vertex": "1",
+          "label": "LayerNorm + 有效步平均池化",
+          "geometry": {
+            "height": "48.32",
+            "width": "327",
+            "x": "2137",
+            "y": "609.14",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "19",
+            "strokeWidth": "2",
+            "spacingTop": "-1",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-122",
+          "parent": "1",
+          "vertex": "1",
+          "label": "",
+          "geometry": {
+            "height": "188.03",
+            "width": "232",
+            "x": "2515.56",
+            "y": "483.68",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "1",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "dashed": "1",
+            "dashPattern": "8 8",
+            "fontFamily": "Times New Roman",
+            "fontSize": "16"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-126",
+          "parent": "1",
+          "vertex": "1",
+          "label": "情感强度",
+          "geometry": {
+            "height": "60",
+            "width": "120",
+            "x": "2569.31",
+            "y": "480.38",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "2",
+            "opacity": "0",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-127",
+          "parent": "1",
+          "vertex": "1",
+          "label": "",
+          "geometry": {
+            "height": "188.03",
+            "width": "210",
+            "x": "2756",
+            "y": "483.62",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "1",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "dashed": "1",
+            "dashPattern": "8 8",
+            "labelBackgroundColor": "none",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-131",
+          "parent": "1",
+          "vertex": "1",
+          "label": "情感极性",
+          "geometry": {
+            "height": "60",
+            "width": "120",
+            "x": "2801.3999999999996",
+            "y": "480.38",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "2",
+            "opacity": "0",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-137",
+          "parent": "1",
+          "vertex": "1",
+          "label": "融合修正MLP",
+          "geometry": {
+            "height": "40.58",
+            "width": "146.87",
+            "x": "2560.12",
+            "y": "355.87000000000006",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "2",
+            "spacingTop": "6",
+            "fontStyle": "0"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-138",
+          "parent": "1",
+          "vertex": "1",
+          "label": "Δscore（1）",
+          "geometry": {
+            "height": "31.38",
+            "width": "111.56",
+            "x": "2517.44",
+            "y": "416.71",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "19",
+            "strokeWidth": "2",
+            "spacingTop": "-1",
+            "fontStyle": "0",
+            "spacingLeft": "10",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-139",
+          "parent": "1",
+          "vertex": "1",
+          "label": "Δlogits（3）",
+          "geometry": {
+            "height": "31.38",
+            "width": "111.56",
+            "x": "2638",
+            "y": "416.71",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "19",
+            "strokeWidth": "2",
+            "spacingTop": "-3",
+            "fontStyle": "0",
+            "spacingLeft": "4",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-140",
+          "parent": "1",
+          "vertex": "1",
+          "label": "base score",
+          "geometry": {
+            "height": "31.38",
+            "width": "97",
+            "x": "2759",
+            "y": "416.49000000000007",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "19",
+            "strokeWidth": "2",
+            "spacingTop": "-1",
+            "fontStyle": "0",
+            "spacingLeft": "-2",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-141",
+          "parent": "1",
+          "vertex": "1",
+          "label": "base logits",
+          "geometry": {
+            "height": "31.38",
+            "width": "97",
+            "x": "2865.44",
+            "y": "416.71",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "19",
+            "strokeWidth": "2",
+            "spacingTop": "-1",
+            "fontStyle": "0",
+            "spacingLeft": "2",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-142",
+          "parent": "1",
+          "vertex": "1",
+          "label": "文本基础预测",
+          "geometry": {
+            "height": "40.58",
+            "width": "146.87",
+            "x": "2787.26",
+            "y": "355.87000000000006",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "2",
+            "spacingTop": "6",
+            "fontStyle": "0"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-144",
+          "parent": "1",
+          "vertex": "1",
+          "label": "base  logits+Δlogits",
+          "geometry": {
+            "height": "31.38",
+            "width": "188.68",
+            "x": "2766.6600000000003",
+            "y": "530.62",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "19",
+            "strokeWidth": "2",
+            "spacingTop": "-1",
+            "fontStyle": "0",
+            "spacingLeft": "10",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-145",
+          "parent": "1",
+          "vertex": "1",
+          "label": "3tanh(·/3)",
+          "geometry": {
+            "height": "31.38",
+            "width": "194.61",
+            "x": "2532",
+            "y": "579.0100000000001",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "19",
+            "strokeWidth": "2",
+            "spacingTop": "-1",
+            "fontStyle": "0",
+            "spacingLeft": "10",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-146",
+          "parent": "1",
+          "vertex": "1",
+          "label": "强度值[-3, 3]",
+          "geometry": {
+            "height": "31.38",
+            "width": "194.61",
+            "x": "2534.25",
+            "y": "627.62",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "19",
+            "strokeWidth": "2",
+            "spacingTop": "-1",
+            "fontStyle": "0",
+            "spacingLeft": "10",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-147",
+          "parent": "1",
+          "vertex": "1",
+          "label": "Softmax / 三分类概率",
+          "geometry": {
+            "height": "31.38",
+            "width": "188.68",
+            "x": "2767.06",
+            "y": "578.94",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "19",
+            "strokeWidth": "2",
+            "spacingTop": "-1",
+            "fontStyle": "0",
+            "spacingLeft": "10",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-154",
+          "parent": "1",
+          "vertex": "1",
+          "label": "",
+          "geometry": {
+            "height": "327.74",
+            "width": "146.87",
+            "x": "1930",
+            "y": "352.22",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "1",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "dashed": "1",
+            "dashPattern": "8 8",
+            "labelBackgroundColor": "none",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-148",
+          "parent": "1",
+          "vertex": "1",
+          "label": "极性类别{中/  正/ 负}",
+          "geometry": {
+            "height": "31.38",
+            "width": "188.68",
+            "x": "2766.32",
+            "y": "627.61",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "19",
+            "strokeWidth": "2",
+            "spacingTop": "-1",
+            "fontStyle": "1",
+            "spacingLeft": "1",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-149",
+          "parent": "1",
+          "vertex": "1",
+          "label": "",
+          "geometry": {
+            "height": "327.74",
+            "width": "220.65",
+            "x": "1702",
+            "y": "352.51",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "1",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "dashed": "1",
+            "dashPattern": "8 8",
+            "labelBackgroundColor": "none",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-150",
+          "parent": "1",
+          "vertex": "1",
+          "label": "线性投影",
+          "geometry": {
+            "height": "60",
+            "width": "120",
+            "x": "1748",
+            "y": "377.86999999999995",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "2",
+            "opacity": "0",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-165",
+          "parent": "1",
+          "source": "mFdmstkuWRQXA2u8hkEb-152",
+          "target": "mFdmstkuWRQXA2u8hkEb-156",
+          "edge": "1",
+          "label": "",
+          "geometry": {
+            "relative": "1",
+            "as": "geometry"
+          },
+          "style": {
+            "edgeStyle": "orthogonalEdgeStyle",
+            "rounded": "0",
+            "orthogonalLoop": "1",
+            "jettySize": "auto",
+            "html": "1",
+            "entryX": "0",
+            "entryY": "0.5",
+            "entryDx": "0",
+            "entryDy": "0"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-152",
+          "parent": "1",
+          "vertex": "1",
+          "label": "Linear(d→64) + LayerNorm + GELU",
+          "geometry": {
+            "height": "60",
+            "width": "200",
+            "x": "1712",
+            "y": "524",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "2",
+            "spacingTop": "-1",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-166",
+          "parent": "1",
+          "source": "mFdmstkuWRQXA2u8hkEb-153",
+          "target": "mFdmstkuWRQXA2u8hkEb-157",
+          "edge": "1",
+          "label": "",
+          "geometry": {
+            "relative": "1",
+            "as": "geometry"
+          },
+          "style": {
+            "edgeStyle": "orthogonalEdgeStyle",
+            "rounded": "0",
+            "orthogonalLoop": "1",
+            "jettySize": "auto",
+            "html": "1",
+            "entryX": "0",
+            "entryY": "0.5",
+            "entryDx": "0",
+            "entryDy": "0"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-153",
+          "parent": "1",
+          "vertex": "1",
+          "label": "Linear(d→64) + LayerNorm + GELU",
+          "geometry": {
+            "height": "60",
+            "width": "200",
+            "x": "1712",
+            "y": "604.18",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "2",
+            "spacingTop": "-1",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-164",
+          "parent": "1",
+          "source": "mFdmstkuWRQXA2u8hkEb-103",
+          "target": "mFdmstkuWRQXA2u8hkEb-90",
+          "edge": "1",
+          "label": "",
+          "geometry": {
+            "relative": "1",
+            "as": "geometry"
+          },
+          "style": {
+            "edgeStyle": "orthogonalEdgeStyle",
+            "rounded": "0",
+            "orthogonalLoop": "1",
+            "jettySize": "auto",
+            "html": "1",
+            "entryX": "0",
+            "entryY": "0.5",
+            "entryDx": "0",
+            "entryDy": "0"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-103",
+          "parent": "1",
+          "vertex": "1",
+          "label": "Linear(d→64) + LayerNorm + GELU",
+          "geometry": {
+            "height": "60",
+            "width": "200",
+            "x": "1712",
+            "y": "439.87",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "2",
+            "spacingTop": "-1",
+            "fontFamily": "Times New Roman",
+            "labelBackgroundColor": "default"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-155",
+          "parent": "1",
+          "vertex": "1",
+          "label": "编码器单层",
+          "geometry": {
+            "height": "60",
+            "width": "120",
+            "x": "1940",
+            "y": "387.86999999999995",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "2",
+            "opacity": "0",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-156",
+          "parent": "1",
+          "vertex": "1",
+          "label": "Transformer\n四头Attention",
+          "geometry": {
+            "height": "60",
+            "width": "130",
+            "x": "1940",
+            "y": "524.91",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "2",
+            "spacingTop": "-1",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-157",
+          "parent": "1",
+          "vertex": "1",
+          "label": "Transformer\n四头Attention",
+          "geometry": {
+            "height": "60",
+            "width": "130",
+            "x": "1940",
+            "y": "604.18",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "2",
+            "spacingTop": "-1",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-90",
+          "parent": "1",
+          "vertex": "1",
+          "label": "Transformer\n四头Attention",
+          "geometry": {
+            "height": "60",
+            "width": "130",
+            "x": "1940",
+            "y": "439.87",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "2",
+            "spacingTop": "-1",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-160",
+          "parent": "1",
+          "source": "mFdmstkuWRQXA2u8hkEb-86",
+          "target": "mFdmstkuWRQXA2u8hkEb-103",
+          "edge": "1",
+          "label": "",
+          "geometry": {
+            "relative": "1",
+            "as": "geometry"
+          },
+          "style": {
+            "edgeStyle": "orthogonalEdgeStyle",
+            "rounded": "0",
+            "orthogonalLoop": "1",
+            "jettySize": "auto",
+            "html": "1"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-161",
+          "parent": "1",
+          "source": "mFdmstkuWRQXA2u8hkEb-87",
+          "target": "mFdmstkuWRQXA2u8hkEb-152",
+          "edge": "1",
+          "label": "",
+          "geometry": {
+            "relative": "1",
+            "as": "geometry"
+          },
+          "style": {
+            "edgeStyle": "orthogonalEdgeStyle",
+            "rounded": "0",
+            "orthogonalLoop": "1",
+            "jettySize": "auto",
+            "html": "1"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-119",
+          "parent": "1",
+          "vertex": "1",
+          "label": "时序融合层",
+          "geometry": {
+            "height": "179.27",
+            "width": "356",
+            "x": "2121",
+            "y": "490.0600000000001",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "21",
+            "strokeWidth": "1",
+            "spacingTop": "-113",
+            "fontFamily": "Times New Roman",
+            "dashed": "1",
+            "dashPattern": "8 8",
+            "fillColor": "none"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-163",
+          "parent": "1",
+          "source": "mFdmstkuWRQXA2u8hkEb-88",
+          "target": "mFdmstkuWRQXA2u8hkEb-153",
+          "edge": "1",
+          "label": "",
+          "geometry": {
+            "relative": "1",
+            "as": "geometry"
+          },
+          "style": {
+            "edgeStyle": "orthogonalEdgeStyle",
+            "rounded": "0",
+            "orthogonalLoop": "1",
+            "jettySize": "auto",
+            "html": "1",
+            "entryX": "0",
+            "entryY": "0.5",
+            "entryDx": "0",
+            "entryDy": "0"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-167",
+          "parent": "1",
+          "vertex": "1",
+          "label": "",
+          "geometry": {
+            "height": "31.38",
+            "width": "80",
+            "x": "2266",
+            "y": "458.86",
+            "as": "geometry"
+          },
+          "style": {
+            "html": "1",
+            "shadow": "0",
+            "dashed": "0",
+            "align": "center",
+            "verticalAlign": "middle",
+            "shape": "mxgraph.arrows2.arrow",
+            "dy": "0.47",
+            "dx": "18.24",
+            "direction": "south",
+            "notch": "0"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-171",
+          "parent": "1",
+          "source": "mFdmstkuWRQXA2u8hkEb-90",
+          "target": "mFdmstkuWRQXA2u8hkEb-113",
+          "edge": "1",
+          "label": "",
+          "geometry": {
+            "relative": "1",
+            "as": "geometry"
+          },
+          "style": {
+            "edgeStyle": "orthogonalEdgeStyle",
+            "rounded": "0",
+            "orthogonalLoop": "1",
+            "jettySize": "auto",
+            "html": "1",
+            "entryX": "0",
+            "entryY": "0.427",
+            "entryDx": "0",
+            "entryDy": "0",
+            "entryPerimeter": "0"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-173",
+          "parent": "1",
+          "source": "mFdmstkuWRQXA2u8hkEb-156",
+          "target": "mFdmstkuWRQXA2u8hkEb-113",
+          "edge": "1",
+          "label": "",
+          "geometry": {
+            "relative": "1",
+            "as": "geometry"
+          },
+          "style": {
+            "edgeStyle": "orthogonalEdgeStyle",
+            "rounded": "0",
+            "orthogonalLoop": "1",
+            "jettySize": "auto",
+            "html": "1",
+            "entryX": "-0.005",
+            "entryY": "0.656",
+            "entryDx": "0",
+            "entryDy": "0",
+            "entryPerimeter": "0"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-174",
+          "parent": "1",
+          "source": "mFdmstkuWRQXA2u8hkEb-157",
+          "target": "mFdmstkuWRQXA2u8hkEb-113",
+          "edge": "1",
+          "label": "",
+          "geometry": {
+            "relative": "1",
+            "as": "geometry"
+          },
+          "style": {
+            "edgeStyle": "orthogonalEdgeStyle",
+            "rounded": "0",
+            "orthogonalLoop": "1",
+            "jettySize": "auto",
+            "html": "1",
+            "entryX": "0",
+            "entryY": "0.865",
+            "entryDx": "0",
+            "entryDy": "0",
+            "entryPerimeter": "0"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-178",
+          "parent": "1",
+          "source": "mFdmstkuWRQXA2u8hkEb-137",
+          "target": "mFdmstkuWRQXA2u8hkEb-138",
+          "edge": "1",
+          "label": "",
+          "geometry": {
+            "height": "50",
+            "relative": "1",
+            "width": "50",
+            "as": "geometry"
+          },
+          "style": {
+            "endArrow": "classic",
+            "html": "1",
+            "rounded": "0",
+            "exitX": "0.25",
+            "exitY": "1",
+            "exitDx": "0",
+            "exitDy": "0",
+            "entryX": "0.709",
+            "entryY": "-0.052",
+            "entryDx": "0",
+            "entryDy": "0",
+            "entryPerimeter": "0"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-179",
+          "parent": "1",
+          "edge": "1",
+          "label": "",
+          "geometry": {
+            "height": "50",
+            "relative": "1",
+            "width": "50",
+            "as": "geometry"
+          },
+          "style": {
+            "endArrow": "classic",
+            "html": "1",
+            "rounded": "0",
+            "exitX": "0.25",
+            "exitY": "1",
+            "exitDx": "0",
+            "exitDy": "0",
+            "entryX": "0.709",
+            "entryY": "-0.052",
+            "entryDx": "0",
+            "entryDy": "0",
+            "entryPerimeter": "0"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-180",
+          "parent": "1",
+          "source": "mFdmstkuWRQXA2u8hkEb-142",
+          "target": "mFdmstkuWRQXA2u8hkEb-140",
+          "edge": "1",
+          "label": "",
+          "geometry": {
+            "height": "50",
+            "relative": "1",
+            "width": "50",
+            "as": "geometry"
+          },
+          "style": {
+            "endArrow": "classic",
+            "html": "1",
+            "rounded": "0",
+            "exitX": "0.25",
+            "exitY": "1",
+            "exitDx": "0",
+            "exitDy": "0",
+            "entryX": "0.676",
+            "entryY": "-0.003",
+            "entryDx": "0",
+            "entryDy": "0",
+            "entryPerimeter": "0"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-181",
+          "parent": "1",
+          "edge": "1",
+          "label": "",
+          "geometry": {
+            "height": "50",
+            "relative": "1",
+            "width": "50",
+            "as": "geometry"
+          },
+          "style": {
+            "endArrow": "classic",
+            "html": "1",
+            "rounded": "0",
+            "exitX": "0.75",
+            "exitY": "1",
+            "exitDx": "0",
+            "exitDy": "0",
+            "entryX": "0.329",
+            "entryY": "-0.052",
+            "entryDx": "0",
+            "entryDy": "0",
+            "entryPerimeter": "0"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-196",
+          "parent": "1",
+          "edge": "1",
+          "label": "",
+          "geometry": {
+            "relative": "1",
+            "as": "geometry"
+          },
+          "style": {
+            "edgeStyle": "orthogonalEdgeStyle",
+            "rounded": "0",
+            "orthogonalLoop": "1",
+            "jettySize": "auto",
+            "html": "1",
+            "entryX": "0.5",
+            "entryY": "0",
+            "entryDx": "0",
+            "entryDy": "0"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-143",
+          "parent": "1",
+          "vertex": "1",
+          "label": "base  score+Δscore",
+          "geometry": {
+            "height": "31.38",
+            "width": "194.61",
+            "x": "2532",
+            "y": "530.62",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "fontSize": "19",
+            "strokeWidth": "2",
+            "spacingTop": "-1",
+            "fontStyle": "0",
+            "spacingLeft": "10",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-185",
+          "parent": "1",
+          "source": "mFdmstkuWRQXA2u8hkEb-138",
+          "target": "mFdmstkuWRQXA2u8hkEb-143",
+          "edge": "1",
+          "label": "",
+          "geometry": {
+            "relative": "1",
+            "as": "geometry"
+          },
+          "style": {
+            "edgeStyle": "orthogonalEdgeStyle",
+            "rounded": "0",
+            "orthogonalLoop": "1",
+            "jettySize": "auto",
+            "html": "1",
+            "entryX": "0.212",
+            "entryY": "-0.02",
+            "entryDx": "0",
+            "entryDy": "0",
+            "entryPerimeter": "0"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-187",
+          "parent": "1",
+          "source": "mFdmstkuWRQXA2u8hkEb-141",
+          "target": "mFdmstkuWRQXA2u8hkEb-144",
+          "edge": "1",
+          "label": "",
+          "geometry": {
+            "relative": "1",
+            "as": "geometry"
+          },
+          "style": {
+            "edgeStyle": "orthogonalEdgeStyle",
+            "rounded": "0",
+            "orthogonalLoop": "1",
+            "jettySize": "auto",
+            "html": "1",
+            "entryX": "0.782",
+            "entryY": "-0.015",
+            "entryDx": "0",
+            "entryDy": "0",
+            "entryPerimeter": "0"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-190",
+          "parent": "1",
+          "source": "mFdmstkuWRQXA2u8hkEb-139",
+          "edge": "1",
+          "label": "",
+          "geometry": {
+            "height": "50",
+            "relative": "1",
+            "width": "50",
+            "as": "geometry"
+          },
+          "style": {
+            "endArrow": "classic",
+            "html": "1",
+            "rounded": "0",
+            "exitX": "0.5",
+            "exitY": "1",
+            "exitDx": "0",
+            "exitDy": "0"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-192",
+          "parent": "1",
+          "source": "mFdmstkuWRQXA2u8hkEb-140",
+          "edge": "1",
+          "label": "",
+          "geometry": {
+            "height": "50",
+            "relative": "1",
+            "width": "50",
+            "as": "geometry"
+          },
+          "style": {
+            "endArrow": "classic",
+            "html": "1",
+            "rounded": "0",
+            "exitX": "0.5",
+            "exitY": "1",
+            "exitDx": "0",
+            "exitDy": "0"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-197",
+          "parent": "1",
+          "edge": "1",
+          "label": "",
+          "geometry": {
+            "relative": "1",
+            "as": "geometry"
+          },
+          "style": {
+            "edgeStyle": "orthogonalEdgeStyle",
+            "rounded": "0",
+            "orthogonalLoop": "1",
+            "jettySize": "auto",
+            "html": "1",
+            "entryX": "0.485",
+            "entryY": "0.09",
+            "entryDx": "0",
+            "entryDy": "0",
+            "entryPerimeter": "0"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-203",
+          "parent": "1",
+          "edge": "1",
+          "label": "",
+          "geometry": {
+            "relative": "1",
+            "as": "geometry"
+          },
+          "style": {
+            "edgeStyle": "orthogonalEdgeStyle",
+            "rounded": "0",
+            "orthogonalLoop": "1",
+            "jettySize": "auto",
+            "html": "1",
+            "entryX": "0.5",
+            "entryY": "0",
+            "entryDx": "0",
+            "entryDy": "0"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-209",
+          "parent": "1",
+          "vertex": "1",
+          "label": "多模态缺失鲁棒情感预测网络",
+          "geometry": {
+            "height": "94.87",
+            "width": "1621",
+            "x": "1354",
+            "y": "220",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "labelBackgroundColor": "#E6E6E6",
+            "strokeWidth": "1",
+            "fillColor": "#E6E6E6",
+            "strokeColor": "#000000"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-210",
+          "parent": "1",
+          "edge": "1",
+          "label": "",
+          "geometry": {
+            "relative": "1",
+            "as": "geometry"
+          },
+          "style": {
+            "edgeStyle": "orthogonalEdgeStyle",
+            "rounded": "0",
+            "orthogonalLoop": "1",
+            "jettySize": "auto",
+            "html": "1",
+            "entryX": "0.5",
+            "entryY": "0",
+            "entryDx": "0",
+            "entryDy": "0"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-211",
+          "parent": "1",
+          "vertex": "1",
+          "label": "",
+          "geometry": {
+            "height": "80",
+            "width": "30",
+            "x": "656.6",
+            "y": "167.37",
+            "as": "geometry"
+          },
+          "style": {
+            "html": "1",
+            "shadow": "0",
+            "dashed": "0",
+            "align": "center",
+            "verticalAlign": "middle",
+            "shape": "mxgraph.arrows2.arrow",
+            "dy": "0.55",
+            "dx": "19.18",
+            "notch": "0",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-212",
+          "parent": "1",
+          "vertex": "1",
+          "label": "",
+          "geometry": {
+            "height": "80",
+            "width": "30",
+            "x": "338",
+            "y": "545",
+            "as": "geometry"
+          },
+          "style": {
+            "html": "1",
+            "shadow": "0",
+            "dashed": "0",
+            "align": "center",
+            "verticalAlign": "middle",
+            "shape": "mxgraph.arrows2.arrow",
+            "dy": "0.55",
+            "dx": "19.18",
+            "notch": "0",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-213",
+          "parent": "1",
+          "vertex": "1",
+          "label": "",
+          "geometry": {
+            "height": "80",
+            "width": "30",
+            "x": "540.8",
+            "y": "545",
+            "as": "geometry"
+          },
+          "style": {
+            "html": "1",
+            "shadow": "0",
+            "dashed": "0",
+            "align": "center",
+            "verticalAlign": "middle",
+            "shape": "mxgraph.arrows2.arrow",
+            "dy": "0.55",
+            "dx": "19.18",
+            "notch": "0",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-214",
+          "parent": "1",
+          "vertex": "1",
+          "label": "",
+          "geometry": {
+            "height": "80",
+            "width": "30",
+            "x": "398",
+            "y": "988.12",
+            "as": "geometry"
+          },
+          "style": {
+            "html": "1",
+            "shadow": "0",
+            "dashed": "0",
+            "align": "center",
+            "verticalAlign": "middle",
+            "shape": "mxgraph.arrows2.arrow",
+            "dy": "0.55",
+            "dx": "19.18",
+            "notch": "0",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-215",
+          "parent": "1",
+          "vertex": "1",
+          "label": "",
+          "geometry": {
+            "height": "80",
+            "width": "30",
+            "x": "699.6",
+            "y": "988.12",
+            "as": "geometry"
+          },
+          "style": {
+            "html": "1",
+            "shadow": "0",
+            "dashed": "0",
+            "align": "center",
+            "verticalAlign": "middle",
+            "shape": "mxgraph.arrows2.arrow",
+            "dy": "0.55",
+            "dx": "19.18",
+            "notch": "0",
+            "fontFamily": "Times New Roman"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-216",
+          "parent": "1",
+          "vertex": "1",
+          "label": "文本特征提取过程",
+          "geometry": {
+            "height": "69.87",
+            "width": "740",
+            "x": "130",
+            "y": "10.38",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "labelBackgroundColor": "#E6E6E6",
+            "strokeWidth": "1",
+            "fillColor": "#E6E6E6",
+            "strokeColor": "#000000"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-217",
+          "parent": "1",
+          "vertex": "1",
+          "label": "语音特征提取过程",
+          "geometry": {
+            "height": "69.87",
+            "width": "650",
+            "x": "130",
+            "y": "383.93",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "labelBackgroundColor": "#E6E6E6",
+            "strokeWidth": "1",
+            "fillColor": "#E6E6E6",
+            "strokeColor": "#000000"
+          }
+        },
+        {
+          "id": "mFdmstkuWRQXA2u8hkEb-218",
+          "parent": "1",
+          "vertex": "1",
+          "label": "视觉特征提取过程",
+          "geometry": {
+            "height": "69.87",
+            "width": "780",
+            "x": "130",
+            "y": "840.13",
+            "as": "geometry"
+          },
+          "style": {
+            "rounded": "0",
+            "whiteSpace": "wrap",
+            "html": "1",
+            "labelBackgroundColor": "#E6E6E6",
+            "strokeWidth": "1",
+            "fillColor": "#E6E6E6",
+            "strokeColor": "#000000"
+          }
+        }
+      ]
+    }
+  ],
+  "limitations": "Counts do not prove visual quality, scientific correctness or native editability inside image cells."
+}

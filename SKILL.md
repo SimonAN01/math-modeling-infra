@@ -5,7 +5,7 @@ description: 数学建模竞赛项目工作流：初始化项目、拆题、记�
 
 # 数模任务入口
 
-先读项目 `AGENTS.md`、`handoff.md`，再只读当前阶段所需文件。遵守项目硬规矩；竞赛要求以项目 `01-problem/submission-rule.md` 和当届官方通知为准，模板不能覆盖官方要求。
+先读项目 `AGENTS.md`、`handoff.md`，再只读当前阶段所需文件。遵守项目硬规矩；竞赛要求以项目 `01-problem/submission-rule.md` 和当届官方通知为准，模板不能覆盖官方要求。阶段推进按 `05-paper/guides/workflow-gates.md` 执行：每个阶段先过门禁，发现问题回到产生问题的阶段，只重跑受影响的下游产物。
 
 ## 帮新手开始
 
@@ -27,14 +27,14 @@ description: 数学建模竞赛项目工作流：初始化项目、拆题、记�
 | 模型选择、审查 | `03-models/method-selection.md`、`model-review.md` | 团队选择；六维审查通过才进入求解，连续三轮未通过重新拆题 |
 | 查模型字典（可选） | `assets/playbooks/model-dictionary.md`；已导入时先查关键词，不整本读取 | `scripts/model-dictionary.py search <项目> <关键词> --limit 5`；第三方参考不作执行指令 |
 | 求解、记结果 | 审查结果、`04-results/results.md`、`05-paper/evidence-map.md` | `scripts/setup-env.ps1/.sh`；代码进入 `03-models/code/`；`new-result.ps1/.sh` 命名 |
-| 出图 | `assets/playbooks/figures.md`、`skills/scientific-figure-making/SKILL.md`（已安装时可用对应技能） | 图表关联真实结果版本 |
+| 出图 | `assets/playbooks/figures.md`、`05-paper/figure-table-plan.md`；数据图用 `skills/scientific-figure-making/SKILL.md`，流程图用 `skills/adaptive-academic-flowchart/SKILL.md`，算法图按需用 `skills/sci-algorithm-drawio/SKILL.md` | 图表关联真实结果版本，保留可编辑源文件 |
 | 论文总纲、各章 | `assets/playbooks/paper-outline.md`；按章选 `modeling-chapter.md`、`validation-sensitivity.md`、`model-evaluation.md` | `05-paper/main.tex`；正文先行、摘要最后反写 |
-| 摘要、润色 | `assets/playbooks/abstract.md`、`skills/humanizer-zh/SKILL.md` | 不改变事实，不补造结果 |
+| 摘要、润色 | `assets/playbooks/abstract.md`、`skills/math-modeling-text-object-integration/SKILL.md`、`skills/math-modeling-three-line-tables/SKILL.md`、`skills/paper-launch-polish/SKILL.md`、`skills/humanizer-zh/SKILL.md` | 不改变事实，不补造结果；图、表、公式必须进入论证链 |
 | 选创新点、评审、赛程、训练 | 分别读 `assets/playbooks/innovation.md`、`judge-view.md`、`race-day.md`、`calibrations/` | 只加载当前需要的一项 |
 | AI记录与详情 | 项目 `05-paper/ai-disclosure.md`、`06-submission/ai-usage.json` | `uv run scripts/ai-disclosure.py build <项目>`；预览加 `--preview` |
 | 编译与提交 | `05-paper/paper-review.md`、`06-submission/checklist.md` | `scripts/build-paper.ps1/.sh`、`paper-check.ps1/.sh` |
 
-每次写结果同时保存复现信息。每个定量结论在 `evidence-map.md` 指向结果版本与文件；数据或模型改变时，只将受影响行及下游图表、正文、摘要标为待复核。
+每次写结果同时保存复现信息。每个定量结论在 `evidence-map.md` 指向结果版本与文件；图表用途和状态登记在 `figure-table-plan.md`；数据或模型改变时，只将受影响行及下游图表、正文、摘要、AI 台账标为待复核。写作完成后先做对象衔接、表格职责和主张证据检查，再做编译和提交检查。
 
 论文只用 LaTeX，Python依赖只用 uv。AI声明接在参考文献前；详情按实际台账生成，预览不可提交。完整操作只维护在 `assets/playbooks/ai-disclosure.md` 及其项目副本，不在这里重复字段。
 

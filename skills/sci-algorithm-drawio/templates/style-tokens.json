@@ -1,0 +1,84 @@
+{
+  "purpose": "可调整的工作起点，非期刊规范；黑白灰主导而非强制纯灰度",
+  "palette": {
+    "paper": "#FFFFFF",
+    "ink": "#252525",
+    "secondary": "#666666",
+    "header": "#E6E6E6",
+    "subtleGray": "#F5F5F5",
+    "mutedBlue": "#DFE9F3",
+    "mutedGreen": "#E3ECE6",
+    "mutedOchre": "#F1E6D2",
+    "blueAccent": "#4E6F8C",
+    "ochreAccent": "#96713C"
+  },
+  "colorRules": [
+    "基础框架与大面积背景保持中性",
+    "辅助色绑定对象、通路或状态，不给所有阶段各铺一种色",
+    "颜色和形状、位置、线型或标签冗余表达",
+    "不机械规定灰度面积比例或辅助色数量"
+  ],
+  "strokes": {
+    "outer": 1.2,
+    "stage": 1.0,
+    "module": 1.0,
+    "flow": 1.3,
+    "groupDash": "5 4"
+  },
+  "typography": {
+    "fontFamily": "Noto Serif CJK SC",
+    "mustVerifyInstalled": true,
+    "paperWidthMmDefault": 160,
+    "exampleExportWidthUnits": 1000,
+    "mainPtTarget": [
+      9.5,
+      11
+    ],
+    "notePtTarget": [
+      8.5,
+      9.5
+    ],
+    "minimumPtDefault": 8,
+    "exampleMainFontSize": 22,
+    "warning": "只有给定最终宽度和实际完整导出范围才可估计纸面字号，不照抄坐标值"
+  },
+  "spacing": {
+    "unit": "main fontSize F",
+    "modulePaddingXEm": [
+      0.35,
+      0.55
+    ],
+    "modulePaddingYEm": [
+      0.25,
+      0.4
+    ],
+    "intraGroupGapEm": [
+      0.5,
+      0.85
+    ],
+    "stageGapEm": [
+      0.8,
+      1.2
+    ],
+    "containerPaddingEm": [
+      0.45,
+      0.7
+    ],
+    "outerPaddingEm": [
+      0.6,
+      1
+    ],
+    "parallelRoutePitchEm": [
+      0.4,
+      0.65
+    ],
+    "warning": "根据端口、箭头和分支标签调整；不使用最小值挤压全部内容"
+  },
+  "quantityRules": {
+    "maxLabels": null,
+    "maxBoxes": null,
+    "maxNesting": null,
+    "criterion": "每个对象有语义，必要信息完整，最终尺寸可读"
+  },
+  "version": "3.0"
+}

@@ -72,7 +72,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/install-skills.ps1 "
 bash scripts/install-skills.sh "$HOME/.codex/skills"
 ```
 
-目标目录可换为所用助手的技能目录。安装包括数模框架、出图规范和语言润色技能；框架所需模板与代码资源一并复制。
+目标目录可换为所用助手的技能目录。安装包括数模框架、出图规范、算法图、三线表、正文衔接和语言润色技能；框架所需模板与代码资源一并复制。
 
 ## 维护与来源
 

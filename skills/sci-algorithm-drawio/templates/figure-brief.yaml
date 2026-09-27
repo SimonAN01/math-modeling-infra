@@ -1,0 +1,21 @@
+version: "4.0"
+figure_claim: ""
+figure_type: ""
+evidence: []
+unknowns: []
+required_information: []
+core_mechanism_to_expand: []
+can_remain_abstract: []
+source_topology: "topology.json"
+frozen_topology: "topology.lock.json"
+layout_plan: "layout-plan.md"
+final_width_mm: 160
+main_label_target_pt: [9.5, 11]
+secondary_label_target_pt: [8.5, 9.5]
+formula_in_figure: false
+palette: "黑白灰主导，少量有语义的辅助色"
+non_claims: []
+reference_manifest: "references.json"
+reference_review: "reference-review.md"
+reference_search_required: true
+reference_visual_inspection_required: true

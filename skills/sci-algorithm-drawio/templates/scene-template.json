@@ -1,0 +1,25 @@
+{
+  "pages": [
+    {
+      "id": "p1",
+      "name": "待填写",
+      "width": 1000,
+      "height": 600,
+      "font_family": "Noto Serif CJK SC",
+      "base_font_size": 22,
+      "edge_font_size": 21,
+      "paper": {
+        "width_mm": 160,
+        "main_min_pt": 9.5,
+        "note_min_pt": 8.5,
+        "min_text_pt": 8
+      },
+      "layout": {
+        "adjacencies": [],
+        "exceptions": []
+      },
+      "nodes": [],
+      "edges": []
+    }
+  ]
+}

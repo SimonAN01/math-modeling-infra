@@ -1,5 +1,5 @@
 #!/bin/bash
-# 把框架及自带的两个配套 skill 装到 Agent 的 skills 目录。
+# 把框架及配套技能装到 Agent 的 skills 目录。
 #
 #   ./install-skills.sh ~/.claude/skills     # Claude Code / opencode / Cursor
 #   ./install-skills.sh ~/.codex/skills      # Codex
@@ -18,7 +18,7 @@ cp -rf "$ROOT/assets" "$ROOT/scripts" "$DEST/math-modeling-infra/"
 cp -rf "$ROOT/templates" "$ROOT/code-templates" "$ROOT/docs" "$ROOT/calibrations" "$ROOT/skills" "$DEST/math-modeling-infra/"
 cp -f "$ROOT/LICENSE" "$DEST/math-modeling-infra/"
 
-for s in scientific-figure-making humanizer-zh; do
+for s in scientific-figure-making humanizer-zh adaptive-academic-flowchart math-modeling-text-object-integration math-modeling-three-line-tables sci-algorithm-drawio paper-launch-polish; do
   cp -rf "$ROOT/skills/$s" "$DEST/"
 done
 

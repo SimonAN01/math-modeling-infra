@@ -1,0 +1,20 @@
+{
+  "schema_version": "4.0",
+  "notice": "空模板不可通过。必须真实检索、看图与核对；不是填几个 URL 即可。",
+  "task": {
+    "algorithm": "",
+    "variant": "",
+    "figure_purpose": ""
+  },
+  "search": {
+    "status": "pending",
+    "runs": []
+  },
+  "sources": [],
+  "coverage": [],
+  "review": {
+    "status": "pending",
+    "topology_sha256": "",
+    "notes": ""
+  }
+}

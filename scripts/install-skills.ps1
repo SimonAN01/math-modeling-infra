@@ -1,4 +1,4 @@
-﻿# 把框架及自带的两个配套 skill 装到 Agent 的 skills 目录（Windows PowerShell）。
+﻿# 把框架及配套技能装到 Agent 的 skills 目录（Windows PowerShell）。
 #
 #   powershell .\install-skills.ps1 "$env:USERPROFILE\.claude\skills"   # Claude Code / opencode
 #   powershell .\install-skills.ps1 "$env:USERPROFILE\.codex\skills"    # Codex
@@ -21,7 +21,7 @@ foreach ($folder in @("templates", "code-templates", "docs", "calibrations", "sk
 }
 Copy-Item (Join-Path $Root "LICENSE") (Join-Path $Dest "math-modeling-infra\") -Force
 
-foreach ($s in @("scientific-figure-making", "humanizer-zh")) {
+foreach ($s in @("scientific-figure-making", "humanizer-zh", "adaptive-academic-flowchart", "math-modeling-text-object-integration", "math-modeling-three-line-tables", "sci-algorithm-drawio", "paper-launch-polish")) {
   Copy-Item (Join-Path $Root "skills\$s") (Join-Path $Dest $s) -Recurse -Force
 }
 
@@ -29,3 +29,8 @@ Write-Host "已安装到 ${Dest}:"
 Write-Host "  - math-modeling-infra（数模工作流）"
 Write-Host "  - scientific-figure-making（出图规范）"
 Write-Host "  - humanizer-zh（去 AI 味）"
+Write-Host "  - adaptive-academic-flowchart（学术流程图）"
+Write-Host "  - math-modeling-text-object-integration（图表公式正文衔接）"
+Write-Host "  - math-modeling-three-line-tables（三线表）"
+Write-Host "  - sci-algorithm-drawio（科研算法图）"
+Write-Host "  - paper-launch-polish（论文叙事润色）"

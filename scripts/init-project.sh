@@ -63,6 +63,7 @@ put ai-usage.json      06-submission/ai-usage.json
 put ai-statement.tex   05-paper/ai-statement.tex
 put main.tex           05-paper/main.tex
 put evidence-map.md    05-paper/evidence-map.md
+put figure-table-plan.md 05-paper/figure-table-plan.md
 putp ai-disclosure.md  05-paper/ai-disclosure.md
 
 # 章节写作与证据记录
@@ -73,6 +74,7 @@ putp assumptions.md 05-paper/guides/assumptions.md
 putp symbols.md 05-paper/guides/symbols.md
 putp references-appendix.md 05-paper/guides/references-appendix.md
 putp review-rubric.md 05-paper/guides/review-rubric.md
+putp workflow-gates.md 05-paper/guides/workflow-gates.md
 put assumption-register.md 03-models/assumption-register.md
 put symbol-register.md 05-paper/symbol-register.md
 put reference-register.md 05-paper/reference-register.md
